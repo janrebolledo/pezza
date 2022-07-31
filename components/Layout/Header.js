@@ -4,10 +4,12 @@ import React, { useState } from "react";
 function Header() {
   const [headerVisible, setHeaderVisible] = useState(false);
   return (
-    <header className="w-full h-[13vh] z-10 bg-blue-500 flex flex-row justify-between">
-      <h1>Pezza VFX</h1>
+    <header className="w-full h-[13vh] z-[100000000000000000] bg-bb text-white fixed flex flex-row justify-between items-center px-10 shadow-lg">
+      <h1 className="text-3xl drop-shadow-lg">Pezza VFX</h1>
       <div></div>
-      <Link href="/">Contact &rarr;</Link>
+      <p className="btn">
+        <Link href="/">Contact &rarr;</Link>
+      </p>
     </header>
   );
 }

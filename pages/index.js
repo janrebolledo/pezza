@@ -26,22 +26,35 @@ export default function Home() {
       </Head>
 
       <section className="max-h-screen">
-        <div className="absolute w-full aspect-video flex flex-col items-start justify-center">
-          <h1>CUTTING EDGE PRODUCTION THAT BUILDS BRANDS</h1>
-          <p className="btn">
-            <Link href="/">Contact &rarr;</Link>
-          </p>
+        <div className="w-full aspect-video flex flex-col items-start justify-center px-10">
+          <h1 className="text-7xl">
+            CUTTING EDGE PRODUCTION THAT BUILDS BRANDS
+          </h1>
+          <div className="flex flex-row gap-4 z-10">
+            <p className="btn">
+              <Link href="/">Contact &rarr;</Link>
+            </p>
+            <p className="btns">
+              <Link href="/">Explore Projects &rarr;</Link>
+            </p>
+          </div>
         </div>
-        <video className="w-full aspect-video bg-white/50">
+        {/* <video className="w-full aspect-video bg-white/50">
           <source />
-        </video>
+        </video> */}
       </section>
 
-      <section className="w-full grid grid-cols-4">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+      <section className="w-full px-10 py-4">
+        <h1 className="text-7xl">FEATURED WORK</h1>
+        <div className="grid grid-cols-4 gap-4">
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+        </div>
+        <p className="btn mt-4">
+          <Link href="/">View All &rarr;</Link>
+        </p>
       </section>
     </main>
   );
