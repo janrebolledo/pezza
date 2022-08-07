@@ -15,6 +15,10 @@ body {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+#__next {
+  background: url("../public/background.png");
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -35,10 +39,22 @@ h6 {
 
 @layer components {
   .btn {
-    @apply px-4 py-3 text-white flex items-center justify-center bg-gradient-to-br from-bb-light to-bb font-bold max-w-max max-h-min shadow-lg;
+    @apply px-4 py-3 cursor-pointer text-white flex items-center justify-center bg-gradient-to-br from-bb-light to-bb font-bold max-w-max max-h-min shadow-lg;
   }
 
   .btns {
-    @apply px-4 py-3 text-white flex items-center justify-center border-white border-solid border-2 font-bold max-w-max max-h-min shadow-lg;
+    @apply px-4 py-3 cursor-pointer text-white flex items-center justify-center border-white border-solid border-2 font-bold max-w-max max-h-min shadow-lg;
   }
+
+  .btnt {
+    @apply px-4 py-3 cursor-pointer text-bb flex items-center justify-center bg-white font-bold max-w-max max-h-min shadow-lg;
+  }
+
+  .bgradient {
+    @apply bg-gradient-to-br from-bb-light to-bb;
+  }
+}
+
+:root {
+  --swiper-theme-color: #ffffff !important;
 }

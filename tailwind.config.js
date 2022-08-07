@@ -14,7 +14,7 @@ module.exports = {
         },
       },
       padding: {
-        10: "100px",
+        5: "5%",
       },
     },
   },
