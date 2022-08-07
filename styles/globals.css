@@ -58,3 +58,16 @@ h6 {
 :root {
   --swiper-theme-color: #ffffff !important;
 }
+
+.swiper-button-prev {
+  left: 5% !important;
+}
+
+.swiper-button-next {
+  right: 5% !important;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+  opacity: 0.5;
+}
