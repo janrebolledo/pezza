@@ -71,3 +71,9 @@ h6 {
 .swiper-slide-next {
   opacity: 0.5;
 }
+
+@media (min-width: 768px) {
+  .hidden-i {
+    display: none !important;
+  }
+}
