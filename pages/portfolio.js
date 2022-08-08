@@ -1,7 +1,9 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import Contact from "../components/Layout/Contact";
+import { createClient } from "contentful";
 
 import { Navigation, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -47,7 +49,7 @@ const categories = [
   },
 ];
 
-function portfolio() {
+export default function portfolio({ clients }) {
   return (
     <main className="text-white">
       <Head>
@@ -83,8 +85,13 @@ function portfolio() {
         </Swiper>
       </section>
 
-      <section className="px-5">
-        <h1 className="text-7xl">Recent Clients</h1>
+      <section className="px-5 py-16">
+        <h1 className="text-7xl mb-8">Recent Clients</h1>
+        <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4">
+          {clients.map((client, index) => (
+            <Client client={client} key={index} />
+          ))}
+        </div>
       </section>
 
       <Contact />
@@ -108,4 +115,42 @@ function CategorySlide({ category }) {
   );
 }
 
-export default portfolio;
+function Client({ client }) {
+  const { name, projectLink } = client.fields;
+  const { file, title } = client.fields.picture.fields;
+
+  return (
+    <div className="flex flex-row gap-4 items-center">
+      <Image
+        src={"https:" + file.url}
+        alt={title}
+        width={124}
+        height={124}
+        className="rounded-full"
+      />
+      <div className="flex flex-col gap-4">
+        <h3 className="text-3xl">{name}</h3>
+        <p className="btn">
+          <Link href={"/projects/" + projectLink.fields.slug}>
+            View Project &rarr;
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  });
+
+  const res = await client.getEntries({ content_type: "client" });
+
+  return {
+    props: {
+      clients: res.items,
+    },
+  };
+}
