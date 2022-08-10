@@ -87,7 +87,7 @@ export default function portfolio({ clients }) {
 
       <section className="px-5 py-16">
         <h1 className="text-7xl mb-8">Recent Clients</h1>
-        <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-4">
           {clients.map((client, index) => (
             <Client client={client} key={index} />
           ))}
@@ -120,7 +120,7 @@ function Client({ client }) {
   const { file, title } = client.fields.picture.fields;
 
   return (
-    <div className="flex flex-row gap-4 items-center">
+    <div className="flex flex-row gap-4 items-center justify-center">
       <Image
         src={"https:" + file.url}
         alt={title}

@@ -29,7 +29,7 @@ export default function Home({ projects, testimonials }) {
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
 
-      <section className="max-h-screen">
+      <section className="w-full aspect-video relative">
         <div className="w-full aspect-video flex flex-col items-start justify-center px-5">
           <h1 className="text-7xl">
             CUTTING EDGE PRODUCTION THAT BUILDS BRANDS
@@ -43,12 +43,12 @@ export default function Home({ projects, testimonials }) {
             </p>
           </div>
         </div>
-        {/* <video className="w-full aspect-video bg-white/50">
+        <video className="w-full aspect-video bg-white/50 absolute top-0">
           <source />
-        </video> */}
+        </video>
       </section>
 
-      <section className="w-full px-5 py-4">
+      <section className="w-full px-5 py-16">
         <h1 className="text-7xl mb-4">FEATURED WORK</h1>
         <ProjectsList projects={projects} />
         <div className="w-full flex justify-center">
