@@ -6,6 +6,7 @@ import Turnarounds from "../../public/turnarounds.png";
 
 function Header() {
   const [headerVisible, setHeaderVisible] = useState(false);
+  const [dropdownVisible, setdropdownVisible] = useState(false);
   return (
     <header className="w-full h-[13vh] z-[100000000000000000] bg-bb text-white fixed flex flex-row justify-between items-center px-5 shadow-lg">
       <h1 className="text-3xl drop-shadow-lg">
@@ -22,13 +23,23 @@ function Header() {
         <Link href="/">CONTACT &rarr;</Link>
       </p>
       {headerVisible && (
-        <nav
-          className="fixed top-[13vh] left-0 w-full z-[100000000000000] bg-bb p-6 text-xl flex gap-8 flex-col h-[87vh]"
-          onClick={() => setHeaderVisible(!headerVisible)}
-        >
+        <nav className="fixed top-[13vh] left-0 w-full z-[100000000000000] bg-bb p-6 text-xl flex gap-8 flex-col h-[87vh]">
           <Link href="/">HOME</Link>
           <Link href="/about">ABOUT</Link>
-          <Link href="/portfolio">PORTFOLIO</Link>
+          <p className="w-full flex relative justify-between items-center">
+            <Link href="/portfolio">PORTFOLIO</Link>
+            <span
+              className="material-symbols-outlined"
+              onClick={() => setdropdownVisible(!dropdownVisible)}
+            >
+              {dropdownVisible ? "expand_less" : "expand_more"}
+            </span>
+          </p>
+          {dropdownVisible && (
+            <div className="ml-8">
+              <Link href="/projects/motion-design">MOTION DESIGN</Link>
+            </div>
+          )}
         </nav>
       )}
       <p

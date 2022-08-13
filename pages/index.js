@@ -14,9 +14,10 @@ const metadata = {
     "pezza vfx, video production, content strategy, photography, videography",
 };
 
-export default function Home({ projects, testimonials }) {
+export default function Home({ projects, testimonials, copy }) {
+  console.log(copy);
   return (
-    <main className="text-white">
+    <main className="text-white pt-[13vh] md:pt-0">
       <Head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
@@ -31,9 +32,7 @@ export default function Home({ projects, testimonials }) {
 
       <section className="w-full aspect-video relative">
         <div className="w-full aspect-video flex flex-col items-start justify-center px-5">
-          <h1 className="text-7xl">
-            CUTTING EDGE PRODUCTION THAT BUILDS BRANDS
-          </h1>
+          <h1 className="text-7xl">{copy.landingPageHeading}</h1>
           <div className="flex flex-row gap-4 z-10">
             <p className="btn">
               <Link href="/">Contact &rarr;</Link>
@@ -59,14 +58,11 @@ export default function Home({ projects, testimonials }) {
       </section>
 
       <section className="relative">
-        <img src={Section.src} />
-        <div className="absolute top-0 w-full h-full p-5 grid items-center md:grid-cols-4 gap-8">
+        <img src={Section.src} className="hidden md:block" />
+        <div className="md:absolute top-0 w-full h-full p-5 grid items-center md:grid-cols-4 gap-8 bgradient">
           <div>
             <h1 className="text-7xl">Services</h1>
-            <p>
-              Offering a wide range of authentic, engaging experiences for
-              brands.
-            </p>
+            <p>{copy.servicesParagraph}</p>
             <p className="btnt mt-4">
               <Link href="/projects/all">View All &rarr;</Link>
             </p>
@@ -74,47 +70,41 @@ export default function Home({ projects, testimonials }) {
 
           <div className="flex flex-col gap-4">
             <h2 className="flex items-center gap-4 text-3xl">
-              <span className="material-symbols-outlined">cut</span>VIDEO
-              EDITING
+              <span className="material-symbols-outlined">cut</span>
+              {copy.serviceHeading1}
             </h2>
-            <p>
-              Delivering high quality videos. Creating corprate videos to sports
-              highlights &amp; theatrical trailers.
-            </p>
-            <p className="btns">
-              <Link href="/projects/video-editing">
-                View Video Editing Projects &rarr;
-              </Link>
-            </p>
+            <p>{copy.serviceParagraph1}</p>
+            <Link href="/projects/video-editing">
+              <p className="btns">
+                View {copy.serviceHeading1} Projects &rarr;
+              </p>
+            </Link>
           </div>
 
           <div className="flex flex-col gap-4">
             <h2 className="flex items-center gap-4 text-3xl">
               <span className="material-symbols-outlined">videocam</span>
-              VIDEOGRAPHY
+              {copy.serviceHeading2}
             </h2>
-            <p>
-              Videography that engages your audience and builds strength in your
-              brand.
-            </p>
-            <p className="btns">
-              <Link href="/projects/videography">
-                View Videography Projects &rarr;
-              </Link>
-            </p>
+            <p>{copy.serviceParagraph2}</p>
+            <Link href="/projects/videography">
+              <p className="btns">
+                View {copy.serviceHeading2} Projects &rarr;
+              </p>
+            </Link>
           </div>
 
           <div className="flex flex-col gap-4">
             <h2 className="flex items-center gap-4 text-3xl">
               <span className="material-symbols-outlined">image</span>
-              PHOTOGRAPHY
+              {copy.serviceHeading3}
             </h2>
-            <p>Quality photography that builds trust with your clients.</p>
-            <p className="btns">
-              <Link href="/projects/photography">
-                View Photography Projects &rarr;
-              </Link>
-            </p>
+            <p>{copy.serviceParagraph3}</p>
+            <Link href="/projects/photography">
+              <p className="btns">
+                View {copy.serviceHeading2} Projects &rarr;
+              </p>
+            </Link>
           </div>
         </div>
       </section>
@@ -133,11 +123,13 @@ export async function getStaticProps() {
   });
 
   const res = await client.getEntries({ content_type: "project" });
+  const res1 = await client.getEntry("3YyunYoPT2MlpeAMRT6w0F");
   const res2 = await client.getEntries({ content_type: "testimonial" });
 
   return {
     props: {
       projects: res.items,
+      copy: res1.fields,
       testimonials: res2.items,
     },
   };
