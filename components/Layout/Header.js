@@ -8,8 +8,11 @@ function Header() {
   const [headerVisible, setHeaderVisible] = useState(false);
   const [dropdownVisible, setdropdownVisible] = useState(false);
   return (
-    <header className="w-full h-[13vh] z-[100000000000000000] bg-bb text-white fixed flex flex-row justify-between items-center px-5 shadow-lg">
-      <h1 className="text-3xl drop-shadow-lg">
+    <header className="w-full h-[13vh] z-[100000000000000000] bg-bb text-white font-bold fixed flex flex-row justify-between items-center px-5 shadow-lg">
+      <h1
+        className="text-3xl drop-shadow-lg"
+        onClick={() => setHeaderVisible(false)}
+      >
         <Link href="/">Pezza VFX</Link>
       </h1>
       <img className="w-48 hidden md:block" src={BasedIn.src} />
@@ -24,8 +27,18 @@ function Header() {
       </p>
       {headerVisible && (
         <nav className="fixed top-[13vh] left-0 w-full z-[100000000000000] bg-bb p-6 text-xl flex gap-8 flex-col h-[87vh]">
-          <Link href="/">HOME</Link>
-          <Link href="/about">ABOUT</Link>
+          <p
+            className="w-full"
+            onClick={() => setHeaderVisible(!headerVisible)}
+          >
+            <Link href="/">HOME</Link>
+          </p>
+          <p
+            className="w-full"
+            onClick={() => setHeaderVisible(!headerVisible)}
+          >
+            <Link href="/about">ABOUT</Link>
+          </p>
           <p className="w-full flex relative justify-between items-center">
             <Link href="/portfolio">PORTFOLIO</Link>
             <span

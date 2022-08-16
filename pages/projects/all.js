@@ -24,7 +24,12 @@ export default function all({ projects }) {
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
 
-      <div>all</div>
+      <section className="px-5 pt-48 ">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <h1 className="text-7xl col-span-2">All Projects</h1>
+          <div className="col-span-6 grid grid-cols-6"></div>
+        </div>
+      </section>
     </main>
   );
 }

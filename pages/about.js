@@ -1,6 +1,12 @@
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 import { createClient } from "contentful";
+
+import Adobe from "../public/images/program-logos/adobe.png";
+import DaVinci from "../public/images/program-logos/davinci.png";
+import AVID from "../public/images/program-logos/avid.png";
+import Vegas from "../public/images/program-logos/vegas.png";
 
 const metadata = {
   title: "Pezza VFX — About",
@@ -24,10 +30,71 @@ function about({ copy }) {
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
 
-      <section className="px-5 pt-48 bgradient grid grid-cols-2">
+      <section className="px-5 pt-48 py-12 bgradient grid grid-cols-1 gap-8 md:grid-cols-2">
         <div className="flex flex-col gap-4">
           <h1 className="text-7xl">About Me</h1>
-          <p>{copy.aboutMe}</p>
+          <p className="whitespace-pre-line">{copy.aboutMe}</p>
+        </div>
+        <div className="col-span-1 relative aspect-square md:aspect-video">
+          <Image
+            className="w-full"
+            src={"https:" + copy.aboutMeImage.fields.file.url}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+          />
+        </div>
+      </section>
+
+      <section className="px-5 py-12">
+        <div>
+          <h1 className="text-7xl">Workflow</h1>
+          <div className="bgradient grid grid-cols-2 md:grid-cols-4"></div>
+        </div>
+        <div className="flex flex-col gap-4">
+          <div className="flex w-1/2">
+            <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24">
+              01.
+            </h1>
+            <p>{copy.workflowParagraph1}</p>
+          </div>
+          <div className="flex w-1/2">
+            <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24">
+              02.
+            </h1>
+            <p>{copy.workflowParagraph2}</p>
+          </div>
+          <div className="flex w-1/2">
+            <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24">
+              03.
+            </h1>
+            <p>{copy.workflowParagraph3}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-4 grid-cols-1 md:grid-cols-2 px-5 py-12 bgradient">
+        <div>
+          <h1 className="text-7xl">Skills</h1>
+          <p>{copy.skillsParagraph}</p>
+        </div>
+        <div className="font-bold text-center grid gap-4 grid-cols-2 md:grid-cols-4">
+          <div className="flex gap-4 flex-col items-center">
+            <Image src={Adobe} width={64} height={64} />
+            <p>Adobe Creative Cloud</p>
+          </div>
+          <div className="flex gap-4 flex-col items-center">
+            <Image src={DaVinci} width={64} height={64} />
+            <p>DaVinci Resolve</p>
+          </div>
+          <div className="flex gap-4 flex-col items-center">
+            <Image src={AVID} width={64} height={64} />
+            <p>AVID Media Composer</p>
+          </div>
+          <div className="flex gap-4 flex-col items-center">
+            <Image src={Vegas} width={64} height={64} />
+            <p>Magix Vegas Pro</p>
+          </div>
         </div>
       </section>
     </main>
