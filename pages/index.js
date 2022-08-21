@@ -59,7 +59,7 @@ export default function Home({ projects, testimonials, copy }) {
 
       <section className="relative">
         <img src={Section.src} className="hidden md:block" />
-        <div className="md:absolute top-0 w-full h-full p-5 grid items-center md:grid-cols-4 gap-8 bgradient">
+        <div className="md:absolute top-0 w-full h-full p-5 grid items-center md:grid-cols-4 gap-8 bgradient md:bg-transparent">
           <div>
             <h1 className="text-7xl">Services</h1>
             <p>{copy.servicesParagraph}</p>

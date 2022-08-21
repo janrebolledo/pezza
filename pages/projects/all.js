@@ -1,6 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import { createClient } from "contentful";
+import Link from "next/link";
+import Image from "next/image";
 
 const metadata = {
   title: "Pezza VFX — Portfolio",
@@ -27,7 +29,11 @@ export default function all({ projects }) {
       <section className="px-5 pt-48 ">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <h1 className="text-7xl col-span-2">All Projects</h1>
-          <div className="col-span-6 grid grid-cols-6"></div>
+          <div className="col-span-6 gap-4 grid grid-cols-4">
+            {projects.map((project, index) => (
+              <GridItem project={project} key={index} />
+            ))}
+          </div>
         </div>
       </section>
     </main>
@@ -35,10 +41,21 @@ export default function all({ projects }) {
 }
 
 function GridItem({ project }) {
+  const { slug, title, image } = project.fields;
   return (
-    <div>
-      <h1>Project Title</h1>
-    </div>
+    <Link href={"/projects/" + slug}>
+      <div className="aspect-square p-12 relative projects-grid-item cursor-pointer group">
+        <Image
+          src={"https:" + image.fields.file.url}
+          layout="fill"
+          objectFit="cover"
+          className="group-hover:opacity-50 transition-all"
+        />
+        <h1 className="text-7xl z-10 absolute top-0 left-0 p-8 w-full h-full flex items-end">
+          {title}
+        </h1>
+      </div>
+    </Link>
   );
 }
 

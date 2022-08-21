@@ -4,6 +4,20 @@ import React, { useState } from "react";
 import BasedIn from "../../public/based in.png";
 import Turnarounds from "../../public/turnarounds.png";
 
+const dropdownLinks = [
+  { name: "Overview", href: "/portfolio" },
+  { name: "All Work", href: "/projects/all" },
+  { name: "Video Editing", href: "/projects/video-editing" },
+  { name: "Videography", href: "/projects/videography" },
+  { name: "Photography", href: "/projects/photography" },
+  {
+    name: "Social Media Management",
+    href: "/projects/social-media-management",
+  },
+  { name: "Motion Design", href: "/projects/motion-design" },
+  { name: "Drone", href: "/projects/drone" },
+];
+
 function Header() {
   const [headerVisible, setHeaderVisible] = useState(false);
   const [dropdownVisible, setdropdownVisible] = useState(false);
@@ -19,7 +33,26 @@ function Header() {
       <div className="hidden md:flex flex-row gap-6">
         <Link href="/">HOME</Link>
         <Link href="/about">ABOUT</Link>
-        <Link href="/portfolio">PORTFOLIO</Link>
+        <div
+          className="relative"
+          onClick={() => setdropdownVisible(!dropdownVisible)}
+        >
+          <p className="flex items-center gap-2 cursor-pointer">
+            PORTFOLIO{" "}
+            <span className="material-icons">
+              {dropdownVisible ? "expand_less" : "expand_more"}
+            </span>
+          </p>
+          {dropdownVisible && (
+            <div className="absolute uppercase flex flex-col top-[4.65rem] left-[-1.5rem] p-6 bgradient gap-4">
+              {dropdownLinks.map((link, index) => (
+                <Link href={link.href} key={index}>
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
       <img className="w-48 hidden md:block" src={Turnarounds.src} />
       <p className="hidden md:block">
@@ -49,8 +82,12 @@ function Header() {
             </span>
           </p>
           {dropdownVisible && (
-            <div className="ml-8">
-              <Link href="/projects/motion-design">MOTION DESIGN</Link>
+            <div className="ml-8 flex uppercase flex-col gap-8">
+              {dropdownLinks.map((link, index) => (
+                <Link href={link.href} key={index}>
+                  {link.name}
+                </Link>
+              ))}
             </div>
           )}
         </nav>
