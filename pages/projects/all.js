@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import { createClient } from "contentful";
 import Link from "next/link";
@@ -12,10 +12,6 @@ const metadata = {
 };
 
 export default function all({ projects }) {
-  // const [filter, setFilter] = useState(null);
-
-  const [selectedProjects, setSelectedProjects] = useState(projects);
-
   return (
     <main className="text-white">
       <Head>
@@ -47,7 +43,7 @@ export default function all({ projects }) {
         </div>
       </section>
       <section className="gap-4 grid grid-cols-1 md:grid-cols-4 bgradient px-5 py-12">
-        {selectedProjects.map((project, index) => (
+        {projects.map((project, index) => (
           <GridItem project={project} key={index} />
         ))}
       </section>
