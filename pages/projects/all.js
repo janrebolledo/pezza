@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import { createClient } from "contentful";
 import Link from "next/link";
@@ -12,6 +12,10 @@ const metadata = {
 };
 
 export default function all({ projects }) {
+  const [filter, setFilter] = useState(null);
+
+  const [selectedProjects, setSelectedProjects] = useState(projects);
+
   return (
     <main className="text-white">
       <Head>
@@ -26,15 +30,26 @@ export default function all({ projects }) {
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
 
-      <section className="px-5 pt-48 ">
-        <div className="grid grid-cols-1 md:grid-cols-2">
+      <section className="px-5 pt-48 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-8">
           <h1 className="text-7xl col-span-2">All Projects</h1>
-          <div className="col-span-6 gap-4 grid grid-cols-4">
-            {projects.map((project, index) => (
-              <GridItem project={project} key={index} />
-            ))}
+          <div className="col-span-6 grid gap-4 grid-cols-6">
+            <p className="w-full bg-bb/50 text-center py-2 font-bold cursor-pointer flex items-center justify-center">
+              ALL
+            </p>
+            <p
+              className="w-full bg-bb/50 text-center py-2 font-bold cursor-pointer flex items-center justify-center"
+              onClick={() => setFilter("Social Media Management")}
+            >
+              SOCIAL MEDIA MANAGEMENT
+            </p>
           </div>
         </div>
+      </section>
+      <section className="gap-4 grid grid-cols-4 bgradient px-5 py-12">
+        {selectedProjects.map((project, index) => (
+          <GridItem project={project} key={index} />
+        ))}
       </section>
     </main>
   );
