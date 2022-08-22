@@ -6,7 +6,7 @@ function Contact() {
       <div>
         <h1 className="text-7xl">Contact</h1>
         <p>
-          Let's get in touch and start your project today.
+          Let&apos;s get in touch and start your project today.
           <br />
           <br />
           Contact me via Email, or fill out this form.

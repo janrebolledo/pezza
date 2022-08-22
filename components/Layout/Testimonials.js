@@ -35,13 +35,16 @@ function Testimonials({ testimonials }) {
 function TestimonialSlide({ testimonial }) {
   return (
     <div className="flex flex-col justify-center items-center gap-12">
-      <p className="text-3xl font-bold">"{testimonial.fields.testimonial}"</p>
+      <p className="text-3xl font-bold">
+        &quot;{testimonial.fields.testimonial}&quot;
+      </p>
       <div className="flex flex-row gap-4 items-center">
         <Image
           src={"https:" + testimonial.fields.image.fields.file.url}
           width={64}
           height={64}
           className="rounded-full"
+          alt=""
         />
         <div className="h-full flex flex-col">
           <h4 className="text-xl">{testimonial.fields.name}</h4>

@@ -12,7 +12,7 @@ const metadata = {
 };
 
 export default function all({ projects }) {
-  const [filter, setFilter] = useState(null);
+  // const [filter, setFilter] = useState(null);
 
   const [selectedProjects, setSelectedProjects] = useState(projects);
 
@@ -33,20 +33,20 @@ export default function all({ projects }) {
       <section className="px-5 pt-48 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-8">
           <h1 className="text-7xl col-span-2">All Projects</h1>
-          <div className="col-span-6 grid gap-4 grid-cols-6">
-            <p className="w-full bg-bb/50 text-center py-2 font-bold cursor-pointer flex items-center justify-center">
+          {/* <div className="col-span-6 flex overflow-x-auto w-full gap-4">
+            <p className="bg-bb/50 text-center py-2 px-4 font-bold cursor-pointer flex items-center justify-center whitespace-nowrap">
               ALL
             </p>
             <p
-              className="w-full bg-bb/50 text-center py-2 font-bold cursor-pointer flex items-center justify-center"
+              className="bg-bb/50 text-center py-2 px-4 font-bold cursor-pointer flex items-center justify-center whitespace-nowrap"
               onClick={() => setFilter("Social Media Management")}
             >
               SOCIAL MEDIA MANAGEMENT
             </p>
-          </div>
+          </div> */}
         </div>
       </section>
-      <section className="gap-4 grid grid-cols-4 bgradient px-5 py-12">
+      <section className="gap-4 grid grid-cols-1 md:grid-cols-4 bgradient px-5 py-12">
         {selectedProjects.map((project, index) => (
           <GridItem project={project} key={index} />
         ))}

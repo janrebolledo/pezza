@@ -42,6 +42,7 @@ function about({ copy }) {
             layout="fill"
             objectFit="cover"
             objectPosition="center"
+            alt="Pezza VFX"
           />
         </div>
       </section>
@@ -58,13 +59,13 @@ function about({ copy }) {
             </h1>
             <p>{copy.workflowParagraph1}</p>
           </div>
-          <div className="flex w-1/2">
+          <div className="flex w-1/2 md:ml-[25%]">
             <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24">
               02.
             </h1>
             <p>{copy.workflowParagraph2}</p>
           </div>
-          <div className="flex w-1/2">
+          <div className="flex w-1/2 md:ml-[50%]">
             <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24">
               03.
             </h1>
@@ -80,19 +81,19 @@ function about({ copy }) {
         </div>
         <div className="font-bold text-center grid gap-4 grid-cols-2 md:grid-cols-4">
           <div className="flex gap-4 flex-col items-center">
-            <Image src={Adobe} width={64} height={64} />
+            <Image src={Adobe} width={64} height={64} alt />
             <p>Adobe Creative Cloud</p>
           </div>
           <div className="flex gap-4 flex-col items-center">
-            <Image src={DaVinci} width={64} height={64} />
+            <Image src={DaVinci} width={64} height={64} alt />
             <p>DaVinci Resolve</p>
           </div>
           <div className="flex gap-4 flex-col items-center">
-            <Image src={AVID} width={64} height={64} />
+            <Image src={AVID} width={64} height={64} alt />
             <p>AVID Media Composer</p>
           </div>
           <div className="flex gap-4 flex-col items-center">
-            <Image src={Vegas} width={64} height={64} />
+            <Image src={Vegas} width={64} height={64} alt />
             <p>Magix Vegas Pro</p>
           </div>
         </div>

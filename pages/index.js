@@ -58,8 +58,8 @@ export default function Home({ projects, testimonials, copy }) {
       </section>
 
       <section className="relative">
-        <img src={Section.src} className="hidden md:block" />
-        <div className="md:absolute top-0 w-full h-full p-5 grid items-center md:grid-cols-4 gap-8 bgradient md:bg-transparent">
+        <img src={Section.src} className="hidden md:block" alt="" />
+        <div className="md:absolute top-0 w-full h-full p-5 grid items-center md:grid-cols-4 gap-8 bgradient md:bg-none">
           <div>
             <h1 className="text-7xl">Services</h1>
             <p>{copy.servicesParagraph}</p>

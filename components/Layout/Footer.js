@@ -18,10 +18,10 @@ function Footer() {
       <div className="flex flex-col items-end">
         <div className="flex flex-row gap-6">
           <a href="https://twitter.com/pezzavfx">
-            <Image src={Twitter} width={32} height={32} />
+            <Image src={Twitter} width={32} height={32} alt="Twitter" />
           </a>
           <a href="mailto:pezzavfx@gmail.com">
-            <Image src={Email} width={32} height={32} />
+            <Image src={Email} width={32} height={32} alt="Email" />
           </a>
         </div>
         <p className="text-white/50">&copy; Pezza VFX {year}.</p>
