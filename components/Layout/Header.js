@@ -44,7 +44,10 @@ function Header() {
             </span>
           </p>
           {dropdownVisible && (
-            <div className="absolute uppercase flex flex-col top-[4.65rem] left-[-1.5rem] p-6 bgradient gap-4">
+            <div
+              className="absolute uppercase flex flex-col top-[4.65rem] left-[-1.5rem] p-6 bgradient gap-4"
+              onClick={() => setHeaderVisible(false)}
+            >
               {dropdownLinks.map((link, index) => (
                 <Link href={link.href} key={index}>
                   {link.name}
