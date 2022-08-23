@@ -74,12 +74,13 @@ function ProjectPage({ project }) {
         </div>
         {image && <img src={image.fields.file.url} alt={image.fields.title} />}
       </section>
-      <p className="px-5 pt-8">
-        <Link href="/">&larr; RETURN HOME</Link>
-      </p>
+
       <section className="px-5 pt-8">
         {documentToReactComponents(content, options)}
       </section>
+      <p className="px-5 pt-8">
+        <Link href="/">&larr; RETURN HOME</Link>
+      </p>
     </main>
   );
 }

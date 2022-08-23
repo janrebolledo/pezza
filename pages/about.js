@@ -52,21 +52,21 @@ function about({ copy }) {
           <h1 className="text-7xl">Workflow</h1>
           <div className="bgradient grid grid-cols-2 md:grid-cols-4"></div>
         </div>
-        <div className="flex flex-col gap-4">
-          <div className="flex w-1/2">
-            <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24">
+        <div className="flex flex-col gap-4 mt-4">
+          <div className="flex w-full md:w-auto flex-col md:flex-row">
+            <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24 mb-4">
               01.
             </h1>
             <p>{copy.workflowParagraph1}</p>
           </div>
-          <div className="flex w-1/2 md:ml-[25%]">
-            <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24">
+          <div className="flex w-full md:w-auto flex-col md:flex-row md:ml-[25%]">
+            <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24 mb-4">
               02.
             </h1>
             <p>{copy.workflowParagraph2}</p>
           </div>
-          <div className="flex w-1/2 md:ml-[50%]">
-            <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24">
+          <div className="flex w-full md:w-auto flex-col md:flex-row md:ml-[50%]">
+            <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24 mb-4">
               03.
             </h1>
             <p>{copy.workflowParagraph3}</p>

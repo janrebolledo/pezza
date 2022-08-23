@@ -4,7 +4,7 @@ function Contact() {
   return (
     <section className="bgradient grid grid-cols-1 md:grid-cols-2 px-5 py-8">
       <div>
-        <h1 className="text-7xl">Contact</h1>
+        <h1 className="text-5xl md:text-7xl">Contact</h1>
         <p>
           Let&apos;s get in touch and start your project today.
           <br />

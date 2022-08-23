@@ -23,7 +23,7 @@ const categories = [
   {
     name: "Video Editing",
     description:
-      "Delivering high quality videos. Creating corprate videos to sports highlights & theatrical trailers..",
+      "Delivering high quality videos. Creating corprate videos to sports highlights & theatrical trailers.",
     link: "/projects/video-editing",
   },
   {

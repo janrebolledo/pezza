@@ -10,12 +10,12 @@ function Footer() {
   var year = now.getFullYear();
   return (
     <footer className="bg-neutral-900 text-white px-5 py-8 flex flex-col md:flex-row items-center justify-between">
-      <div className="flex gap-24 font-bold text-lg">
+      <div className="flex w-full md:w-auto justify-between md:gap-24 font-bold text-lg">
         <Link href="/">HOME</Link>
         <Link href="/about">ABOUT</Link>
         <Link href="/projects/all">PROJECTS</Link>
       </div>
-      <div className="flex flex-col items-end">
+      <div className="flex flex-col items-center md:items-end">
         <div className="flex flex-row gap-6">
           <a href="https://twitter.com/pezzavfx">
             <Image src={Twitter} width={32} height={32} alt="Twitter" />

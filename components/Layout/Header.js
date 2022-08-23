@@ -6,7 +6,7 @@ import Turnarounds from "../../public/turnarounds.png";
 
 const dropdownLinks = [
   { name: "Overview", href: "/portfolio" },
-  { name: "All Work", href: "/projects/all" },
+  { name: "All Projects", href: "/projects/all" },
   { name: "Video Editing", href: "/projects/video-editing" },
   { name: "Videography", href: "/projects/videography" },
   { name: "Photography", href: "/projects/photography" },
@@ -76,7 +76,7 @@ function Header() {
             <Link href="/about">ABOUT</Link>
           </p>
           <p className="w-full flex relative justify-between items-center">
-            <Link href="/portfolio">PORTFOLIO</Link>
+            <p>PORTFOLIO</p>
             <span
               className="material-symbols-outlined"
               onClick={() => setdropdownVisible(!dropdownVisible)}
@@ -85,7 +85,10 @@ function Header() {
             </span>
           </p>
           {dropdownVisible && (
-            <div className="ml-8 flex uppercase flex-col gap-8">
+            <div
+              className="ml-8 flex uppercase flex-col gap-8 overflow-y-auto"
+              onClick={() => setHeaderVisible(!headerVisible)}
+            >
               {dropdownLinks.map((link, index) => (
                 <Link href={link.href} key={index}>
                   {link.name}

@@ -10,7 +10,9 @@ import "swiper/css/autoplay";
 function Testimonials({ testimonials }) {
   return (
     <section className="px-5 py-12">
-      <h1 className="text-7xl w-full text-center mb-12">Testimonials</h1>
+      <h1 className="text-5xl md:text-7xl w-full text-center mb-12">
+        Testimonials
+      </h1>
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
@@ -35,7 +37,7 @@ function Testimonials({ testimonials }) {
 function TestimonialSlide({ testimonial }) {
   return (
     <div className="flex flex-col justify-center items-center gap-12">
-      <p className="text-3xl font-bold">
+      <p className="text-xl md:text-3xl font-bold px-12 text-center">
         &quot;{testimonial.fields.testimonial}&quot;
       </p>
       <div className="flex flex-row gap-4 items-center">

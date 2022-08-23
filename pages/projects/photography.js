@@ -5,14 +5,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 const metadata = {
-  title: "Pezza VFX — Portfolio",
+  title: "Pezza VFX — Photography",
   description: "Pezza VFX's portfolio",
   keywords:
     "pezza vfx, video production, content strategy, photography, videography, pezza vfx portfolio",
 };
 
 export default function all({ projects }) {
-  const [filteredProjects, setFilteredProjects] = useState(projects);
+  var photographyProjects = projects.filter((project) =>
+    project.fields.category?.includes("Photography")
+  );
+
+  const [filteredProjects, setFilteredProjects] = useState(photographyProjects);
 
   function filterProjects(filter) {
     var filtered = projects.filter((project) =>
@@ -40,25 +44,31 @@ export default function all({ projects }) {
 
       <section className="px-5 pt-48 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-8">
-          <h1 className="text-7xl col-span-2">All Projects</h1>
+          <h1 className="text-7xl col-span-2">Photography</h1>
           <div className="col-span-6 flex overflow-x-auto w-full gap-4">
             <p
               className="bg-bb/50 text-center py-2 px-4 font-bold cursor-pointer flex items-center justify-center whitespace-nowrap"
-              onClick={() => setFilteredProjects(projects)}
+              onClick={() => setFilteredProjects(photographyProjects)}
             >
               ALL
             </p>
             <p
               className="bg-bb/50 text-center py-2 px-4 font-bold cursor-pointer flex items-center justify-center whitespace-nowrap"
-              onClick={() => filterProjects("Social Media Management")}
+              onClick={() => filterProjects("Portraits")}
             >
-              SOCIAL MEDIA MANAGEMENT
+              PORTRAITS
             </p>
             <p
               className="bg-bb/50 text-center py-2 px-4 font-bold cursor-pointer flex items-center justify-center whitespace-nowrap"
-              onClick={() => filterProjects("Corporate")}
+              onClick={() => filterProjects("Real Estate")}
             >
-              CORPORATE
+              REAL ESTATE
+            </p>
+            <p
+              className="bg-bb/50 text-center py-2 px-4 font-bold cursor-pointer flex items-center justify-center whitespace-nowrap"
+              onClick={() => filterProjects("Street Photography")}
+            >
+              STREET PHOTOGRAPHY
             </p>
           </div>
         </div>

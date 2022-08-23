@@ -15,7 +15,6 @@ const metadata = {
 };
 
 export default function Home({ projects, testimonials, copy }) {
-  console.log(copy);
   return (
     <main className="text-white pt-[13vh] md:pt-0">
       <Head>
@@ -32,7 +31,7 @@ export default function Home({ projects, testimonials, copy }) {
 
       <section className="w-full aspect-video relative">
         <div className="w-full aspect-video flex flex-col items-start justify-center px-5">
-          <h1 className="text-7xl">{copy.landingPageHeading}</h1>
+          <h1 className="text-5xl md:text-7xl">{copy.landingPageHeading}</h1>
           <div className="flex flex-row gap-4 z-10">
             <p className="btn">
               <Link href="/">Contact &rarr;</Link>
@@ -48,7 +47,7 @@ export default function Home({ projects, testimonials, copy }) {
       </section>
 
       <section className="w-full px-5 py-16">
-        <h1 className="text-7xl mb-4">FEATURED WORK</h1>
+        <h1 className="text-5xl md:text-7xl mb-4">FEATURED WORK</h1>
         <ProjectsList projects={projects} />
         <div className="w-full flex justify-center">
           <p className="btn mt-4">
@@ -59,9 +58,9 @@ export default function Home({ projects, testimonials, copy }) {
 
       <section className="relative">
         <img src={Section.src} className="hidden md:block" alt="" />
-        <div className="md:absolute top-0 w-full h-full p-5 grid items-center md:grid-cols-4 gap-8 bgradient md:bg-none">
+        <div className="md:absolute top-0 w-full h-full p-5 py-12 md:py-5 grid items-center md:grid-cols-4 gap-8 bgradient md:bg-none">
           <div>
-            <h1 className="text-7xl">Services</h1>
+            <h1 className="text-5xl md:text-7xl">Services</h1>
             <p>{copy.servicesParagraph}</p>
             <p className="btnt mt-4">
               <Link href="/projects/all">View All &rarr;</Link>
