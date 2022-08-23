@@ -110,7 +110,7 @@ function CategorySlide({ category }) {
           <p className="btn">View {name} Projects &rarr;</p>
         </Link>
       </div>
-      <img className="w-full h-[492px] bg-white/50" />
+      <img className="w-full h-[492px] bg-white/50" alt="" />
     </div>
   );
 }

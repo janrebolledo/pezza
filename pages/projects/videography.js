@@ -11,7 +11,7 @@ const metadata = {
     "pezza vfx, video production, content strategy, photography, videography, pezza vfx portfolio",
 };
 
-export default function all({ projects }) {
+export default function Projects({ projects }) {
   var videographyProjects = projects.filter((project) =>
     project.fields.category?.includes("Videography")
   );

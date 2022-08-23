@@ -81,19 +81,29 @@ function about({ copy }) {
         </div>
         <div className="font-bold text-center grid gap-4 grid-cols-2 md:grid-cols-4">
           <div className="flex gap-4 flex-col items-center">
-            <Image src={Adobe} width={64} height={64} alt />
+            <Image
+              src={Adobe}
+              width={64}
+              height={64}
+              alt="Adobe Creative Cloud"
+            />
             <p>Adobe Creative Cloud</p>
           </div>
           <div className="flex gap-4 flex-col items-center">
-            <Image src={DaVinci} width={64} height={64} alt />
+            <Image src={DaVinci} width={64} height={64} alt="DaVinci Resolve" />
             <p>DaVinci Resolve</p>
           </div>
           <div className="flex gap-4 flex-col items-center">
-            <Image src={AVID} width={64} height={64} alt />
+            <Image
+              src={AVID}
+              width={64}
+              height={64}
+              alt="AVID Media Composer"
+            />
             <p>AVID Media Composer</p>
           </div>
           <div className="flex gap-4 flex-col items-center">
-            <Image src={Vegas} width={64} height={64} alt />
+            <Image src={Vegas} width={64} height={64} alt="Magix Vegas Pro" />
             <p>Magix Vegas Pro</p>
           </div>
         </div>

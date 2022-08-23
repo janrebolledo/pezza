@@ -11,7 +11,7 @@ const metadata = {
     "pezza vfx, video production, content strategy, photography, videography, pezza vfx portfolio",
 };
 
-export default function all({ projects }) {
+export default function Projects({ projects }) {
   const [filteredProjects, setFilteredProjects] = useState(projects);
 
   function filterProjects(filter) {
