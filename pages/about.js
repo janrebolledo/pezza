@@ -33,7 +33,7 @@ function about({ copy }) {
       <section className="px-5 pt-48 py-12 bgradient grid grid-cols-1 gap-8 md:grid-cols-2">
         <div className="flex flex-col gap-4">
           <h1 className="text-7xl">About Me</h1>
-          <p className="whitespace-pre-line">{copy.aboutMe}</p>
+          <p className="whitespace-pre-line font-medium">{copy.aboutMe}</p>
         </div>
         <div className="col-span-1 relative aspect-square md:aspect-video">
           <Image

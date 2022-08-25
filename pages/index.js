@@ -57,7 +57,7 @@ export default function Home({ projects, testimonials, copy }) {
       </section>
 
       <section className="relative">
-        <img src={Section.src} className="hidden md:block" alt="" />
+        <img src={Section.src} className="hidden md:block w-full" alt="" />
         <div className="md:absolute top-0 w-full h-full p-5 py-12 md:py-5 grid items-center md:grid-cols-4 gap-8 bgradient md:bg-none">
           <div>
             <h1 className="text-5xl md:text-7xl">Services</h1>
@@ -69,7 +69,7 @@ export default function Home({ projects, testimonials, copy }) {
 
           <div className="flex flex-col gap-4">
             <h2 className="flex items-center gap-4 text-3xl">
-              <span className="material-symbols-outlined">cut</span>
+              <span className="material-symbols-outlined !text-5xl">cut</span>
               {copy.serviceHeading1}
             </h2>
             <p>{copy.serviceParagraph1}</p>
@@ -82,7 +82,9 @@ export default function Home({ projects, testimonials, copy }) {
 
           <div className="flex flex-col gap-4">
             <h2 className="flex items-center gap-4 text-3xl">
-              <span className="material-symbols-outlined">videocam</span>
+              <span className="material-symbols-outlined !text-5xl">
+                videocam
+              </span>
               {copy.serviceHeading2}
             </h2>
             <p>{copy.serviceParagraph2}</p>
@@ -95,13 +97,13 @@ export default function Home({ projects, testimonials, copy }) {
 
           <div className="flex flex-col gap-4">
             <h2 className="flex items-center gap-4 text-3xl">
-              <span className="material-symbols-outlined">image</span>
+              <span className="material-symbols-outlined !text-5xl">image</span>
               {copy.serviceHeading3}
             </h2>
             <p>{copy.serviceParagraph3}</p>
             <Link href="/projects/photography">
               <p className="btns">
-                View {copy.serviceHeading2} Projects &rarr;
+                View {copy.serviceHeading3} Projects &rarr;
               </p>
             </Link>
           </div>

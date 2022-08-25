@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 import BasedIn from "../../public/based in.png";
 import Turnarounds from "../../public/turnarounds.png";
@@ -21,24 +22,40 @@ const dropdownLinks = [
 function Header() {
   const [headerVisible, setHeaderVisible] = useState(false);
   const [dropdownVisible, setdropdownVisible] = useState(false);
+
+  const { asPath } = useRouter();
+
+  console.log(asPath);
+
   return (
     <header className="w-full h-[13vh] z-[100000000000000000] bg-bb text-white font-bold fixed flex flex-row justify-between items-center px-5 shadow-lg">
       <h1
-        className="text-3xl drop-shadow-lg"
+        className="text-3xl tracking-wider"
         onClick={() => setHeaderVisible(false)}
       >
         <Link href="/">Pezza VFX</Link>
       </h1>
       <img className="w-48 hidden md:block" src={BasedIn.src} />
       <div className="hidden md:flex flex-row gap-6">
-        <Link href="/">HOME</Link>
-        <Link href="/about">ABOUT</Link>
+        <Link href="/">
+          <p className={asPath === "/" && "underline"}>HOME</p>
+        </Link>
+        <Link href="/about">
+          <p className={asPath === "/about" && "underline"}>ABOUT</p>
+        </Link>
         <div
           className="relative"
           onClick={() => setdropdownVisible(!dropdownVisible)}
         >
           <p className="flex items-center gap-2 cursor-pointer">
-            PORTFOLIO{" "}
+            <span
+              className={
+                asPath.includes("projects" || "portfolio") && `underline`
+              }
+            >
+              PORTFOLIO
+            </span>
+
             <span className="material-icons">
               {dropdownVisible ? "expand_less" : "expand_more"}
             </span>
