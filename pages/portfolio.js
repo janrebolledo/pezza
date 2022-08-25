@@ -64,7 +64,9 @@ export default function portfolio({ clients }) {
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
       <section className="pt-[15vh]">
-        <h1 className="text-center text-white text-7xl my-8">Portfolio</h1>
+        <h1 className="text-center text-white text-7xl !my-8 shape rect-o-l">
+          Portfolio
+        </h1>
         <Swiper
           spaceBetween={32}
           slidesPerView={1.5}
@@ -86,7 +88,7 @@ export default function portfolio({ clients }) {
       </section>
 
       <section className="px-5 py-16">
-        <h1 className="text-7xl mb-8">Recent Clients</h1>
+        <h1 className="text-7xl mb-8 shape rect-f-l">Recent Clients</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-4">
           {clients.map((client, index) => (
             <Client client={client} key={index} />

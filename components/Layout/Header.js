@@ -7,15 +7,14 @@ import Turnarounds from "../../public/turnarounds.png";
 
 const dropdownLinks = [
   { name: "Overview", href: "/portfolio" },
-  { name: "All Projects", href: "/projects/all" },
   { name: "Video Editing", href: "/projects/video-editing" },
   { name: "Videography", href: "/projects/videography" },
+  { name: "Motion Design", href: "/projects/motion-design" },
   { name: "Photography", href: "/projects/photography" },
   {
     name: "Social Media Management",
     href: "/projects/social-media-management",
   },
-  { name: "Motion Design", href: "/projects/motion-design" },
   { name: "Drone", href: "/projects/drone" },
 ];
 
@@ -25,12 +24,10 @@ function Header() {
 
   const { asPath } = useRouter();
 
-  console.log(asPath);
-
   return (
-    <header className="w-full h-[13vh] z-[100000000000000000] bg-bb text-white font-bold fixed flex flex-row justify-between items-center px-5 shadow-lg">
+    <header className="w-full h-[13vh] z-[100000000000000000] bg-bb text-white font-bold fixed flex flex-row justify-between items-center px-5 shadow-lg xl:text-xl">
       <h1
-        className="text-3xl tracking-wider"
+        className="text-4xl font-normal"
         onClick={() => setHeaderVisible(false)}
       >
         <Link href="/">Pezza VFX</Link>
@@ -62,7 +59,7 @@ function Header() {
           </p>
           {dropdownVisible && (
             <div
-              className="absolute uppercase flex flex-col top-[4.65rem] left-[-1.5rem] p-6 bgradient gap-4"
+              className="absolute uppercase flex flex-col top-[8vh] left-[-1.5rem] p-6 bgradient gap-4"
               onClick={() => setHeaderVisible(false)}
             >
               {dropdownLinks.map((link, index) => (

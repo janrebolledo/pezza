@@ -97,3 +97,71 @@ h6 {
   grid-column: span 2 / span 1;
   aspect-ratio: 2 / 1;
 }
+
+@media (min-width: 980px) {
+  .shape {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 20px;
+  }
+
+  .tri-l::before {
+    content: url("../public/headings/triangle-light.svg");
+    position: absolute;
+    z-index: -1;
+    top: -12px;
+    left: -15px;
+  }
+
+  .tri-d::before {
+    content: url("../public/headings/triangle-dark.svg");
+    position: absolute;
+    z-index: -1;
+    top: -12px;
+    left: -15px;
+  }
+
+  .rect-f-l::after {
+    content: url("../public/headings/rect-filled.svg");
+    position: absolute;
+    z-index: -1;
+    top: -10px;
+    margin-left: -90px;
+  }
+
+  .rect-f-d::after {
+    content: url("../public/headings/rect-filled-dark.svg");
+    position: absolute;
+    z-index: -1;
+    top: -10px;
+    margin-left: -90px;
+  }
+
+  .rect-o-l::after {
+    content: url("../public/headings/rect-outline.svg");
+    position: absolute;
+    z-index: -1;
+    top: -10px;
+    margin-left: -90px;
+  }
+
+  .rect-o-d::after {
+    content: url("../public/headings/rect-outline-dark.svg");
+    position: absolute;
+    z-index: -1;
+    top: -10px;
+    margin-left: -90px;
+  }
+
+  .rect-l {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rect-l::after {
+    content: url("../public/headings/long-rect.svg");
+    position: relative;
+    z-index: -1;
+    bottom: 40px;
+  }
+}

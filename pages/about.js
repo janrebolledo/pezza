@@ -32,7 +32,7 @@ function about({ copy }) {
 
       <section className="px-5 pt-48 py-12 bgradient grid grid-cols-1 gap-8 md:grid-cols-2">
         <div className="flex flex-col gap-4">
-          <h1 className="text-7xl">About Me</h1>
+          <h1 className="text-7xl shape rect-o-d">About Me</h1>
           <p className="whitespace-pre-line font-medium">{copy.aboutMe}</p>
         </div>
         <div className="col-span-1 relative aspect-square md:aspect-video">
@@ -49,7 +49,7 @@ function about({ copy }) {
 
       <section className="px-5 py-12">
         <div>
-          <h1 className="text-7xl">Workflow</h1>
+          <h1 className="text-7xl shape tri-l">Workflow</h1>
           <div className="bgradient grid grid-cols-2 md:grid-cols-4"></div>
         </div>
         <div className="flex flex-col gap-4 mt-4">
@@ -76,7 +76,7 @@ function about({ copy }) {
 
       <section className="grid gap-4 grid-cols-1 md:grid-cols-2 px-5 py-12 bgradient">
         <div>
-          <h1 className="text-7xl">Skills</h1>
+          <h1 className="text-7xl shape rect-f-d">Skills</h1>
           <p>{copy.skillsParagraph}</p>
         </div>
         <div className="font-bold text-center grid gap-4 grid-cols-2 md:grid-cols-4">

@@ -47,7 +47,9 @@ export default function Home({ projects, testimonials, copy }) {
       </section>
 
       <section className="w-full px-5 py-16">
-        <h1 className="text-5xl md:text-7xl mb-4">FEATURED WORK</h1>
+        <h1 className="text-5xl md:text-7xl mb-4 shape rect-f-l">
+          FEATURED WORK
+        </h1>
         <ProjectsList projects={projects} />
         <div className="w-full flex justify-center">
           <p className="btn mt-4">
@@ -60,10 +62,10 @@ export default function Home({ projects, testimonials, copy }) {
         <img src={Section.src} className="hidden md:block w-full" alt="" />
         <div className="md:absolute top-0 w-full h-full p-5 py-12 md:py-5 grid items-center md:grid-cols-4 gap-8 bgradient md:bg-none">
           <div>
-            <h1 className="text-5xl md:text-7xl">Services</h1>
+            <h1 className="text-5xl md:text-7xl shape tri-d">Services</h1>
             <p>{copy.servicesParagraph}</p>
             <p className="btnt mt-4">
-              <Link href="/projects/all">View All &rarr;</Link>
+              <Link href="/portfolio">View All &rarr;</Link>
             </p>
           </div>
 

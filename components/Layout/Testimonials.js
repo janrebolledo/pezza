@@ -10,7 +10,7 @@ import "swiper/css/autoplay";
 function Testimonials({ testimonials }) {
   return (
     <section className="px-5 py-12">
-      <h1 className="text-5xl md:text-7xl w-full text-center mb-12">
+      <h1 className="text-5xl md:text-7xl w-full text-center mb-12 shape rect-l">
         Testimonials
       </h1>
       <Swiper
