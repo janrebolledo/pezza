@@ -165,3 +165,21 @@ h6 {
     bottom: 40px;
   }
 }
+
+.headerlinks p {
+  cursor: pointer;
+}
+
+.headerdropdown {
+  transform-origin: top;
+  animation: 0.5s dropdownAni forwards cubic-bezier(0, 0.8, 0.25, 1);
+}
+
+@keyframes dropdownAni {
+  0% {
+    transform: scaleY(0%);
+  }
+  100% {
+    transform: scaleY(100%);
+  }
+}
