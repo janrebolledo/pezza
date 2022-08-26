@@ -68,9 +68,11 @@ function Header() {
               onClick={() => setdropdownVisible(false)}
             >
               {dropdownLinks.map((link, index) => (
-                <Link href={link.href} key={index}>
-                  {link.name}
-                </Link>
+                <p className={asPath === link.href && "underline"}>
+                  <Link href={link.href} key={index}>
+                    {link.name}
+                  </Link>
+                </p>
               ))}
             </div>
           )}

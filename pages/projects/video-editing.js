@@ -68,7 +68,7 @@ export default function Projects({ projects }) {
           </div>
         </div>
       </section>
-      <section className="gap-4 grid grid-cols-1 md:grid-cols-4 bgradient px-5 py-12 min-h-[55vh]">
+      <section className="grid grid-cols-1 md:grid-cols-4 gap-4 projects-grid bgradient px-5 py-12 min-h-[55vh]">
         {filteredProjects.length > 0 ? (
           <>
             {filteredProjects.map((project, index) => (

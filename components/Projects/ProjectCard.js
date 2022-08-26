@@ -3,20 +3,20 @@ import Link from "next/link";
 import Image from "next/image";
 
 function ProjectCard({ project }) {
-  const { title, slug, description, category } = project.fields;
-  const { imageTitle } = project.fields.image.fields;
-  const { url } = project.fields.image.fields.file;
+  const { title, slug, description, category, image } = project.fields;
 
   return (
     <Link href={`/projects/` + slug}>
       <div className="border-2 border-solid border-white bg-neutral-900">
         <div className="relative w-full aspect-video">
-          <Image
-            src={"https:" + url}
-            alt={imageTitle}
-            layout="fill"
-            objectFit="cover"
-          />
+          {image && (
+            <Image
+              src={"https:" + image.fields.file.url}
+              alt={image.fields.title}
+              layout="fill"
+              objectFit="cover"
+            />
+          )}
         </div>
         <div className="p-4 flex flex-col gap-2 text-xs">
           <p className="font-bold underline text-sm uppercase">{category[0]}</p>
