@@ -34,10 +34,10 @@ export default function Home({ projects, testimonials, copy }) {
           <h1 className="text-5xl md:text-7xl">{copy.landingPageHeading}</h1>
           <div className="flex flex-row gap-4 z-10">
             <p className="btn">
-              <Link href="/">Contact &rarr;</Link>
+              <Link href="/contact">Contact &rarr;</Link>
             </p>
             <p className="btns">
-              <Link href="/">Explore Projects &rarr;</Link>
+              <Link href="/portfolio">Explore Projects &rarr;</Link>
             </p>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function Home({ projects, testimonials, copy }) {
         <ProjectsList projects={projects} />
         <div className="w-full flex justify-center">
           <p className="btn mt-4">
-            <Link href="/projects/all">View All &rarr;</Link>
+            <Link href="/portfolio">View All &rarr;</Link>
           </p>
         </div>
       </section>
@@ -65,7 +65,7 @@ export default function Home({ projects, testimonials, copy }) {
             <h1 className="text-5xl md:text-7xl shape tri-d">Services</h1>
             <p>{copy.servicesParagraph}</p>
             <p className="btnt mt-4">
-              <Link href="/portfolio">View All &rarr;</Link>
+              <Link href="/projects/videography">View All &rarr;</Link>
             </p>
           </div>
 

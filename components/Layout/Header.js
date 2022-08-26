@@ -68,10 +68,8 @@ function Header() {
               onClick={() => setdropdownVisible(false)}
             >
               {dropdownLinks.map((link, index) => (
-                <p className={asPath === link.href && "underline"}>
-                  <Link href={link.href} key={index}>
-                    {link.name}
-                  </Link>
+                <p className={asPath === link.href && "underline"} key={index}>
+                  <Link href={link.href}>{link.name}</Link>
                 </p>
               ))}
             </div>
@@ -80,7 +78,7 @@ function Header() {
       </div>
       <img className="w-48 hidden md:block" src={Turnarounds.src} />
       <p className="hidden md:block">
-        <Link href="/">CONTACT &rarr;</Link>
+        <Link href="/contact">CONTACT &rarr;</Link>
       </p>
       {headerVisible && (
         <nav className="fixed top-[13vh] left-0 w-full z-[100000000000000] bg-bb p-6 text-xl flex gap-8 flex-col h-[87vh]">
