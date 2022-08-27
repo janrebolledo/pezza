@@ -31,7 +31,7 @@ function Header() {
         <Link href="/">Pezza VFX</Link>
       </h1>
       <img className="w-48 hidden md:block" src={BasedIn.src} />
-      <div className="hidden md:flex flex-row gap-6 headerlinks">
+      <div className="hidden md:flex flex-row gap-6 headerlinks h-full items-center">
         <Link href="/">
           <p className={asPath === "/" && "underline underline-offset-4"}>
             HOME
@@ -43,7 +43,7 @@ function Header() {
           </p>
         </Link>
         <div
-          className="relative"
+          className="relative h-full flex items-center"
           onMouseOver={() => setdropdownVisible(true)}
           onMouseOut={() => setdropdownVisible(false)}
         >
@@ -68,7 +68,7 @@ function Header() {
           </p>
           {dropdownVisible && (
             <div
-              className="absolute uppercase flex flex-col top-[8vh] left-[-1.5rem] p-6 bgradient gap-4 headerdropdown"
+              className="absolute uppercase flex flex-col top-[13vh] left-[-1.5rem] p-6 bgradient gap-4 headerdropdown"
               onClick={() => setdropdownVisible(false)}
             >
               {dropdownLinks.map((link, index) => (

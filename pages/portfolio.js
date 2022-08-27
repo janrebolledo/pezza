@@ -118,7 +118,7 @@ function CategorySlide({ category }) {
 }
 
 function Client({ client }) {
-  const { name, projectLink } = client.fields;
+  const { name, projectLink, socialLink } = client.fields;
   const { file, title } = client.fields.picture.fields;
 
   return (
@@ -133,7 +133,11 @@ function Client({ client }) {
       <div className="flex flex-col gap-4">
         <h3 className="text-3xl">{name}</h3>
         <p className="btn">
-          <Link href={projectLink}>View Project &rarr;</Link>
+          {/* {projectLink != undefined && (
+            <Link href={"/projects/" + projectLink.fields.slug}>
+              View Project &rarr;
+            </Link>
+          )} */}
         </p>
       </div>
     </div>
