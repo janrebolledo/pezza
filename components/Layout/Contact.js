@@ -2,7 +2,10 @@ import React from "react";
 
 function Contact() {
   return (
-    <section className="bgradient grid grid-cols-1 md:grid-cols-2 px-5 py-8">
+    <section
+      className="bgradient grid grid-cols-1 md:grid-cols-2 px-5 py-8"
+      id="contact"
+    >
       <div>
         <h1 className="text-5xl md:text-7xl shape rect-o-d">Contact</h1>
         <p className="font-bold">

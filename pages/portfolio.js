@@ -133,9 +133,7 @@ function Client({ client }) {
       <div className="flex flex-col gap-4">
         <h3 className="text-3xl">{name}</h3>
         <p className="btn">
-          <Link href={"/projects/" + projectLink.fields.slug}>
-            View Project &rarr;
-          </Link>
+          <Link href={projectLink}>View Project &rarr;</Link>
         </p>
       </div>
     </div>

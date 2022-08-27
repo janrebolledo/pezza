@@ -37,7 +37,7 @@ function Testimonials({ testimonials }) {
 function TestimonialSlide({ testimonial }) {
   return (
     <div className="flex flex-col justify-center items-center gap-12">
-      <p className="text-xl md:text-3xl font-bold px-12 text-center">
+      <p className="text-xl md:text-3xl font-bold px-[20%] text-center">
         &quot;{testimonial.fields.testimonial}&quot;
       </p>
       <div className="flex flex-row gap-4 items-center">

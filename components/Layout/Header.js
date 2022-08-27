@@ -42,7 +42,11 @@ function Header() {
             ABOUT
           </p>
         </Link>
-        <div className="relative">
+        <div
+          className="relative"
+          onMouseOver={() => setdropdownVisible(true)}
+          onMouseOut={() => setdropdownVisible(false)}
+        >
           <p className="flex items-center gap-2 cursor-pointer">
             <Link href="/portfolio">
               <span
@@ -78,7 +82,7 @@ function Header() {
       </div>
       <img className="w-48 hidden md:block" src={Turnarounds.src} />
       <p className="hidden md:block">
-        <Link href="/contact">CONTACT &rarr;</Link>
+        <Link href="/#contact">CONTACT &rarr;</Link>
       </p>
       {headerVisible && (
         <nav className="fixed top-[13vh] left-0 w-full z-[100000000000000] bg-bb p-6 text-xl flex gap-8 flex-col h-[87vh]">

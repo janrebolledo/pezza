@@ -34,7 +34,7 @@ export default function Home({ projects, testimonials, copy }) {
           <h1 className="text-5xl md:text-7xl">{copy.landingPageHeading}</h1>
           <div className="flex flex-row gap-4 z-10">
             <p className="btn">
-              <Link href="/contact">Contact &rarr;</Link>
+              <Link href="/#contact">Contact &rarr;</Link>
             </p>
             <p className="btns">
               <Link href="/portfolio">Explore Projects &rarr;</Link>
