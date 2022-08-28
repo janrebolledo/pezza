@@ -13,14 +13,14 @@ function Footer() {
       <div className="flex w-full md:w-auto justify-between md:gap-24 font-bold text-lg">
         <Link href="/">HOME</Link>
         <Link href="/about">ABOUT</Link>
-        <Link href="/projects/all">PROJECTS</Link>
+        <Link href="/portfolio">PROJECTS</Link>
       </div>
       <div className="flex flex-col items-center md:items-end">
         <div className="flex flex-row gap-6">
           <a href="https://twitter.com/pezzavfx">
             <Image src={Twitter} width={32} height={32} alt="Twitter" />
           </a>
-          <a href="mailto:pezzavfx@gmail.com">
+          <a href="mailto:perrybriggs@pezzavfx.com">
             <Image src={Email} width={32} height={32} alt="Email" />
           </a>
         </div>

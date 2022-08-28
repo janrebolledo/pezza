@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { createClient } from "contentful";
-import GridItem from "../../components/Projects/GridItem";
+import GridItem from "../../../components/Projects/GridItem";
 
 const metadata = {
   title: "Pezza VFX — Videography",
@@ -10,21 +12,25 @@ const metadata = {
     "pezza vfx, video production, content strategy, photography, videography, pezza vfx portfolio",
 };
 
+const filters = [
+  { name: "ALL", href: "/projects/videography" },
+  { name: "REAL ESTATE", href: "/projects/videography/real-estate" },
+  { name: "DRONE", href: "/projects/videography/drone" },
+  { name: "YOUTUBE VIDEOS", href: "/projects/videography/youtube-videos" },
+];
+
 export default function Projects({ projects }) {
-  var videographyProjects = projects.filter((project) =>
-    project.fields.category?.includes("Videography")
+  const { asPath } = useRouter();
+  const categories = { category: "Videography", subCategory: "Real Estate" };
+
+  projects = projects.filter((project) =>
+    project.fields.category?.includes(categories.category)
   );
 
-  const [filteredProjects, setFilteredProjects] = useState(videographyProjects);
-
-  function filterProjects(filter) {
-    var filtered = projects.filter((project) =>
-      project.fields.category?.includes(filter)
+  if (categories.subCategory != "") {
+    projects = projects.filter((project) =>
+      project.fields.subCategories?.includes(categories.subCategory)
     );
-
-    console.log(filtered);
-
-    setFilteredProjects(filtered);
   }
 
   return (
@@ -45,31 +51,26 @@ export default function Projects({ projects }) {
         <div className="grid grid-cols-1 md:grid-cols-8">
           <h1 className="text-7xl col-span-2">Videography</h1>
           <div className="col-span-6 flex overflow-x-auto w-full gap-4">
-            <p
-              className="bg-bb/50 text-center py-2 px-4 font-bold cursor-pointer flex items-center justify-center whitespace-nowrap"
-              onClick={() => setFilteredProjects(videographyProjects)}
-            >
-              ALL
-            </p>
-            <p
-              className="bg-bb/50 text-center py-2 px-4 font-bold cursor-pointer flex items-center justify-center whitespace-nowrap"
-              onClick={() => filterProjects("Real Estate")}
-            >
-              REAL ESTATE
-            </p>
-            <p
-              className="bg-bb/50 text-center py-2 px-4 font-bold cursor-pointer flex items-center justify-center whitespace-nowrap"
-              onClick={() => filterProjects("Street Photography")}
-            >
-              STREET PHOTOGRAPHY
-            </p>
+            {filters.map((filter, index) => (
+              <Link href={filter.href} key={index}>
+                <p
+                  className={
+                    asPath === filter.href
+                      ? "bg-bb-light/50 text-center py-2 px-4 font-bold cursor-pointer flex items-center justify-center whitespace-nowrap"
+                      : "bg-bb/50 text-center py-2 px-4 font-bold cursor-pointer flex items-center justify-center whitespace-nowrap"
+                  }
+                >
+                  {filter.name}
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
-      <section className="gap-4 grid grid-cols-1 md:grid-cols-4 bgradient px-5 py-12 min-h-[55vh]">
-        {filteredProjects.length > 0 ? (
+      <section className="grid grid-cols-1 md:grid-cols-4 gap-4 projects-grid bgradient px-5 py-12 min-h-[55vh]">
+        {projects.length > 0 ? (
           <>
-            {filteredProjects.map((project, index) => (
+            {projects.map((project, index) => (
               <GridItem project={project} key={index} />
             ))}
           </>
