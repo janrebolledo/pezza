@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import { createClient } from "contentful";
-import Link from "next/link";
-import Image from "next/image";
+import GridItem from "../../components/Projects/GridItem";
 
 const metadata = {
   title: "Pezza VFX — Motion Design",
@@ -80,25 +79,6 @@ export default function Projects({ projects }) {
         )}
       </section>
     </main>
-  );
-}
-
-function GridItem({ project }) {
-  const { slug, title, image } = project.fields;
-  return (
-    <Link href={"/projects/" + slug}>
-      <div className="aspect-square p-12 relative projects-grid-item cursor-pointer group">
-        <Image
-          src={"https:" + image.fields.file.url}
-          layout="fill"
-          objectFit="cover"
-          className="group-hover:opacity-50 transition-all"
-        />
-        <h1 className="text-7xl z-10 absolute top-0 left-0 p-8 w-full h-full flex items-end">
-          {title}
-        </h1>
-      </div>
-    </Link>
   );
 }
 

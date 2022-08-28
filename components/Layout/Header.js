@@ -21,7 +21,6 @@ function Header() {
   const [dropdownVisible, setdropdownVisible] = useState(false);
 
   const { asPath } = useRouter();
-
   return (
     <header className="w-full h-[13vh] z-[100000000000000000] bg-bb text-white font-bold fixed flex flex-row justify-between items-center px-5 shadow-lg xl:text-xl">
       <h1
@@ -33,12 +32,20 @@ function Header() {
       <img className="w-48 hidden md:block" src={BasedIn.src} />
       <div className="hidden md:flex flex-row gap-6 headerlinks h-full items-center">
         <Link href="/">
-          <p className={asPath === "/" && "underline underline-offset-4"}>
+          <p
+            className={
+              asPath === "/" ? "underline underline-offset-4" : undefined
+            }
+          >
             HOME
           </p>
         </Link>
         <Link href="/about">
-          <p className={asPath === "/about" && "underline underline-offset-4"}>
+          <p
+            className={
+              asPath === "/about" ? "underline underline-offset-4" : undefined
+            }
+          >
             ABOUT
           </p>
         </Link>
@@ -51,8 +58,9 @@ function Header() {
             <Link href="/portfolio">
               <span
                 className={
-                  asPath.includes("projects" || "portfolio") &&
-                  `underline underline-offset-4`
+                  asPath.includes("projects") || asPath.includes("portfolio")
+                    ? `underline underline-offset-4`
+                    : undefined
                 }
               >
                 PORTFOLIO
@@ -72,7 +80,10 @@ function Header() {
               onClick={() => setdropdownVisible(false)}
             >
               {dropdownLinks.map((link, index) => (
-                <p className={asPath === link.href && "underline"} key={index}>
+                <p
+                  className={asPath === link.href ? "underline" : undefined}
+                  key={index}
+                >
                   <Link href={link.href}>{link.name}</Link>
                 </p>
               ))}

@@ -15,6 +15,7 @@ function ProjectCard({ project }) {
               alt={image.fields.title}
               layout="fill"
               objectFit="cover"
+              priority
             />
           )}
         </div>

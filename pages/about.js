@@ -43,6 +43,7 @@ function about({ copy }) {
             objectFit="cover"
             objectPosition="center"
             alt="Pezza VFX"
+            priority
           />
         </div>
       </section>

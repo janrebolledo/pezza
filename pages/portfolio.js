@@ -19,37 +19,42 @@ const metadata = {
     "pezza vfx, video production, content strategy, photography, videography, pezza vfx portfolio",
 };
 
-const categories = [
-  {
-    name: "Video Editing",
-    description:
-      "Delivering high quality videos. Creating corprate videos to sports highlights & theatrical trailers.",
-    link: "/projects/video-editing",
-  },
-  {
-    name: "Videography",
-    description:
-      "Videography that engages your audience and builds strength in your brand.",
-    link: "/projects/videography",
-  },
-  {
-    name: "Photography",
-    description: "Quality photography that builds trust with your clients.",
-    link: "/projects/photography",
-  },
-  {
-    name: "Social Media Management",
-    description: "Content strategy that builds communities.",
-    link: "/projects/social-media-management",
-  },
-  {
-    name: "Motion Graphics",
-    description: "Premium motion graphics that grab your audience's attention.",
-    link: "/projects/motion-design",
-  },
-];
-
-export default function portfolio({ clients }) {
+export default function portfolio({ copy, clients }) {
+  const categories = [
+    {
+      name: "Video Editing",
+      description:
+        "Delivering high quality videos. Creating corprate videos to sports highlights & theatrical trailers.",
+      link: "/projects/video-editing",
+      image: copy.videoEditingCarouselImage,
+    },
+    {
+      name: "Videography",
+      description:
+        "Videography that engages your audience and builds strength in your brand.",
+      link: "/projects/videography",
+      image: copy.videographyCarouselImage,
+    },
+    {
+      name: "Photography",
+      description: "Quality photography that builds trust with your clients.",
+      link: "/projects/photography",
+      image: copy.photographCarouselImage,
+    },
+    {
+      name: "Social Media Management",
+      description: "Content strategy that builds communities.",
+      link: "/projects/social-media-management",
+      image: copy.socialMediaManagementCarouselImage,
+    },
+    {
+      name: "Motion Graphics",
+      description:
+        "Premium motion graphics that grab your audience's attention.",
+      link: "/projects/motion-design",
+      image: copy.motionDesignCarouselImage,
+    },
+  ];
   return (
     <main className="text-white">
       <Head>
@@ -102,27 +107,40 @@ export default function portfolio({ clients }) {
 }
 
 function CategorySlide({ category }) {
-  const { name, description, link } = category;
+  const { name, description, link, image } = category;
   return (
     <div className="relative w-full">
-      <div className="p-5 absolute top-0 h-full w-full justify-end flex flex-col gap-4">
+      <div className="p-5 absolute top-0 h-full w-full justify-end flex flex-col gap-4 z-[10]">
         <h1 className="text-5xl">{name}</h1>
         <p>{description}</p>
         <Link href={link}>
           <p className="btn">View {name} Projects &rarr;</p>
         </Link>
       </div>
-      <img className="w-full h-[492px] bg-white/50" alt="" />
+      {image ? (
+        <div className="w-full h-[492px] relative">
+          <Image
+            src={"https:" + image.fields.file.url}
+            className="bg-white/50"
+            layout="fill"
+            objectFit="cover"
+            alt=""
+            priority
+          />
+        </div>
+      ) : (
+        <img className="w-full h-[492px] bg-white/50" />
+      )}
     </div>
   );
 }
 
 function Client({ client }) {
-  const { name, projectLink, socialLink } = client.fields;
+  const { name, link } = client.fields;
   const { file, title } = client.fields.picture.fields;
 
   return (
-    <div className="flex flex-row gap-4 items-center justify-center">
+    <div className="flex flex-row gap-4 items-center">
       <Image
         src={"https:" + file.url}
         alt={title}
@@ -133,11 +151,7 @@ function Client({ client }) {
       <div className="flex flex-col gap-4">
         <h3 className="text-3xl">{name}</h3>
         <p className="btn">
-          {/* {projectLink != undefined && (
-            <Link href={"/projects/" + projectLink.fields.slug}>
-              View Project &rarr;
-            </Link>
-          )} */}
+          {link && <Link href={link}>View Client &rarr;</Link>}
         </p>
       </div>
     </div>
@@ -151,10 +165,12 @@ export async function getStaticProps() {
   });
 
   const res = await client.getEntries({ content_type: "client" });
+  const res1 = await client.getEntry("3YyunYoPT2MlpeAMRT6w0F");
 
   return {
     props: {
       clients: res.items,
+      copy: res1.fields,
     },
   };
 }
