@@ -15,7 +15,7 @@ function ContactSection() {
           <br />
           <br />
           Contact me via{" "}
-          <a href="mailto:pezzavfx@gmail.com" className="underline">
+          <a href="mailto:perrybriggs@pezzavfx.com" className="underline">
             Email
           </a>
           , or fill out this form.
