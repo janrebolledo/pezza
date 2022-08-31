@@ -206,3 +206,13 @@ h6 {
     transform: scaleY(100%);
   }
 }
+
+.videoEmbed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.videoEmbed iframe {
+  width: 100%;
+  height: 100%;
+}

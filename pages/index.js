@@ -4,7 +4,7 @@ import { createClient } from "contentful";
 
 import Section from "../public/section.svg";
 import ProjectsList from "../components/Projects/ProjectsList";
-import Contact from "../components/Layout/Contact";
+import ContactSection from "../components/Layout/ContactSection";
 import Testimonials from "../components/Layout/Testimonials";
 
 const metadata = {
@@ -121,7 +121,7 @@ export default function Home({ projects, testimonials, copy }) {
 
       <Testimonials testimonials={testimonials} />
 
-      <Contact />
+      <ContactSection />
     </main>
   );
 }

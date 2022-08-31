@@ -29,7 +29,11 @@ function Header() {
       >
         <Link href="/">Pezza VFX</Link>
       </h1>
-      <img className="w-48 hidden md:block" src={BasedIn.src} />
+      <img
+        className="w-48 hidden md:block"
+        src={BasedIn.src}
+        alt="Based in Brisbane &amp; Gold Coast"
+      />
       <div className="hidden md:flex flex-row gap-6 headerlinks h-full items-center">
         <Link href="/">
           <p
@@ -99,7 +103,11 @@ function Header() {
           )}
         </div>
       </div>
-      <img className="w-48 hidden md:block" src={Turnarounds.src} />
+      <img
+        className="w-48 hidden md:block"
+        src={Turnarounds.src}
+        alt="Same Day Turnarounds"
+      />
       <p className="hidden md:block">
         <Link href="/#contact">CONTACT &rarr;</Link>
       </p>

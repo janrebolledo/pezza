@@ -49,40 +49,86 @@ const options = {
 };
 
 function ProjectPage({ project }) {
-  const { title, image, date, content, excerpt } = project.fields;
-  return (
-    <main className="text-white">
-      <Head>
-        <title>{"Pezza VFX — " + title}</title>
-        <meta name="description" content={excerpt} />
+  const { title, image, date, content, excerpt, videoEmbed } = project.fields;
+  if (videoEmbed != "")
+    return (
+      <main className="text-white">
+        <Head>
+          <title>{"Pezza VFX — " + title}</title>
+          <meta name="description" content={excerpt} />
 
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={"Pezza VFX — " + title} />
-        <meta property="og:description" content={excerpt} />
-        <meta property="og:image" content={"https:" + image.fields.file.url} />
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:image"
-          content={"https:" + image.fields.file.url}
-        />
-      </Head>
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={"Pezza VFX — " + title} />
+          <meta property="og:description" content={excerpt} />
+          <meta
+            property="og:image"
+            content={"https:" + image.fields.file.url}
+          />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta
+            property="twitter:image"
+            content={"https:" + image.fields.file.url}
+          />
+        </Head>
 
-      <section className="p-5 pt-[15vh] h-full bgradient">
-        <div className="flex flex-row justify-between items-center my-8">
-          <h1 className="text-7xl">{title} - CLIENT OVERVIEW</h1>
-          <p>{date}</p>
-        </div>
-        {image && <img src={image.fields.file.url} alt={image.fields.title} />}
-      </section>
+        <section className="p-5 pt-[15vh] h-full bgradient">
+          <div className="flex flex-row justify-between items-center my-8">
+            <h1 className="text-7xl">{title} - CLIENT OVERVIEW</h1>
+            <p>{date}</p>
+          </div>
+          <div
+            dangerouslySetInnerHTML={{ __html: videoEmbed }}
+            className="videoEmbed"
+          />
+        </section>
 
-      <section className="px-5 pt-8">
-        {documentToReactComponents(content, options)}
-      </section>
-      <p className="px-5 pt-8">
-        <Link href="/">&larr; RETURN HOME</Link>
-      </p>
-    </main>
-  );
+        <section className="px-5 pt-8">
+          {documentToReactComponents(content, options)}
+        </section>
+        <p className="px-5 pt-8">
+          <Link href="/">&larr; RETURN HOME</Link>
+        </p>
+      </main>
+    );
+  else
+    return (
+      <main className="text-white">
+        <Head>
+          <title>{"Pezza VFX — " + title}</title>
+          <meta name="description" content={excerpt} />
+
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={"Pezza VFX — " + title} />
+          <meta property="og:description" content={excerpt} />
+          <meta
+            property="og:image"
+            content={"https:" + image.fields.file.url}
+          />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta
+            property="twitter:image"
+            content={"https:" + image.fields.file.url}
+          />
+        </Head>
+
+        <section className="p-5 pt-[15vh] h-full bgradient">
+          <div className="flex flex-row justify-between items-center my-8">
+            <h1 className="text-7xl">{title} - CLIENT OVERVIEW</h1>
+            <p>{date}</p>
+          </div>
+          {image && (
+            <img src={image.fields.file.url} alt={image.fields.title} />
+          )}
+        </section>
+
+        <section className="px-5 pt-8">
+          {documentToReactComponents(content, options)}
+        </section>
+        <p className="px-5 pt-8">
+          <Link href="/">&larr; RETURN HOME</Link>
+        </p>
+      </main>
+    );
 }
 
 export default ProjectPage;

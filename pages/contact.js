@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { createClient } from "contentful";
 
-import Contact from "../components/Layout/Contact";
+import ContactSection from "../components/Layout/ContactSection";
 
 const metadata = {
   title: "Pezza VFX — Contact",
@@ -26,12 +26,12 @@ function Contact({ copy }) {
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Contact />
+      <ContactSection />
     </main>
   );
 }
 
-export default about;
+export default Contact;
 
 export async function getStaticProps() {
   const client = createClient({

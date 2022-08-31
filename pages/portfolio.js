@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import Contact from "../components/Layout/Contact";
+import ContactSection from "../components/Layout/ContactSection";
 import { createClient } from "contentful";
 
 import { Navigation, Autoplay } from "swiper";
@@ -101,7 +101,7 @@ export default function portfolio({ copy, clients }) {
         </div>
       </section>
 
-      <Contact />
+      <ContactSection />
     </main>
   );
 }

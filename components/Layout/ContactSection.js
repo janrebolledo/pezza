@@ -1,6 +1,6 @@
 import React from "react";
 
-function Contact() {
+function ContactSection() {
   return (
     <section
       className="bgradient grid grid-cols-1 md:grid-cols-2 px-5 py-8"
@@ -56,4 +56,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default ContactSection;

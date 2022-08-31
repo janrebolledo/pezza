@@ -12,6 +12,7 @@ export default function GridItem({ project }) {
           objectFit="cover"
           className="group-hover:opacity-50 transition-all"
           priority
+          alt=""
         />
         <h1 className="text-5xl z-10 absolute top-0 left-0 p-8 w-full h-full flex items-end bg-gradient-to-t from-black to-transparent">
           {title}
