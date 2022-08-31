@@ -27,6 +27,7 @@ function ContactSection() {
         data-netlify="true"
         className="flex flex-col gap-4"
       >
+        <input type="hidden" name="form-name" value="contact" />
         <label className="font-bold">Name</label>
         <input
           name="name"
