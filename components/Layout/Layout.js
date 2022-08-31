@@ -1,9 +1,17 @@
 import Footer from "./Footer";
 import Header from "./Header";
+import Head from "next/head";
 
 function Layout(props) {
   return (
     <>
+      <Head>
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href="https://pezzavfx.com/favicon.ico"
+        />
+      </Head>
       <Header />
       {props.children}
       <Footer />
