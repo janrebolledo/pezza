@@ -50,7 +50,8 @@ const options = {
 
 function ProjectPage({ project }) {
   const { title, image, date, content, excerpt, videoEmbed } = project.fields;
-  if (videoEmbed != "")
+
+  if (videoEmbed != undefined)
     return (
       <main className="text-white">
         <Head>
