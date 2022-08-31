@@ -34,7 +34,9 @@ function Header() {
         <Link href="/">
           <p
             className={
-              asPath === "/" ? "underline underline-offset-4" : undefined
+              asPath === "/"
+                ? "underline underline-offset-4 hover:text-bb-light transition-all"
+                : "hover:text-bb-light transition-all"
             }
           >
             HOME
@@ -43,7 +45,9 @@ function Header() {
         <Link href="/about">
           <p
             className={
-              asPath === "/about" ? "underline underline-offset-4" : undefined
+              asPath === "/about"
+                ? "underline underline-offset-4 hover:text-bb-light transition-all"
+                : "hover:text-bb-light transition-all"
             }
           >
             ABOUT
@@ -59,8 +63,8 @@ function Header() {
               <span
                 className={
                   asPath.includes("projects") || asPath.includes("portfolio")
-                    ? `underline underline-offset-4`
-                    : undefined
+                    ? `underline underline-offset-4 hover:text-bb-light transition-all`
+                    : "hover:text-bb-light transition-all"
                 }
               >
                 PORTFOLIO
@@ -81,7 +85,11 @@ function Header() {
             >
               {dropdownLinks.map((link, index) => (
                 <p
-                  className={asPath === link.href ? "underline" : undefined}
+                  className={
+                    asPath === link.href
+                      ? "underline hover:text-bb-light transition-all"
+                      : "hover:text-bb-light transition-all"
+                  }
                   key={index}
                 >
                   <Link href={link.href}>{link.name}</Link>

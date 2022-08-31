@@ -15,6 +15,13 @@ const metadata = {
 };
 
 export default function Home({ projects, testimonials, copy }) {
+  const recentProjects = [
+    copy.recentProject1,
+    copy.recentProject2,
+    copy.recentProject3,
+    copy.recentProject4,
+  ];
+
   return (
     <main className="text-white pt-[13vh] md:pt-0">
       <Head>
@@ -50,7 +57,7 @@ export default function Home({ projects, testimonials, copy }) {
         <h1 className="text-5xl md:text-7xl mb-4 shape rect-f-l">
           FEATURED WORK
         </h1>
-        <ProjectsList projects={projects} />
+        <ProjectsList projects={recentProjects} />
         <div className="w-full flex justify-center">
           <p className="btn mt-4">
             <Link href="/portfolio">View All &rarr;</Link>
