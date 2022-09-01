@@ -35,7 +35,7 @@ export default function portfolio({ copy, clients }) {
         "Videography that engages your audience and builds strength in your brand.",
       link: "/projects/videography",
       media: copy.videographyCarouselImage,
-      type: "image",
+      type: "video",
     },
     {
       name: "Photography",
@@ -57,7 +57,7 @@ export default function portfolio({ copy, clients }) {
         "Premium motion graphics that grab your audience's attention.",
       link: "/projects/motion-graphics",
       media: copy.motionDesignCarouselImage,
-      type: "image",
+      type: "video",
     },
   ];
   return (
