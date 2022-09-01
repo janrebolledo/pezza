@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         bb: {
           light: "#1C94C4",
+          lighter: "#20abe3",
           DEFAULT: "#1E576D",
           dark: "#0D678A",
         },

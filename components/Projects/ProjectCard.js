@@ -20,16 +20,16 @@ function ProjectCard({ project }) {
           )}
         </div>
         <div className="p-4 flex flex-col gap-2 text-xs">
-          <p className="font-bold underline text-sm uppercase mr-2">
+          <div className="flex flex-row gap-2 flex-wrap font-bold underline text-sm uppercase mr-2">
             {category.map((category, index) => (
               <Link
                 href={`/projects/` + category.toLowerCase().replace(" ", "-")}
                 key={index}
               >
-                {category}
+                <p>{category}</p>
               </Link>
             ))}
-          </p>
+          </div>
           <h2 className="text-3xl">{title}</h2>
           <p className="text-sm">{description}</p>
           <p className="btns">View Project &rarr;</p>

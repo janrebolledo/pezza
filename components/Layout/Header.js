@@ -8,7 +8,7 @@ import Turnarounds from "../../public/turnarounds.png";
 const dropdownLinks = [
   { name: "Video Editing", href: "/projects/video-editing" },
   { name: "Videography", href: "/projects/videography" },
-  { name: "Motion Design", href: "/projects/motion-design" },
+  { name: "Motion Graphics", href: "/projects/motion-graphics" },
   { name: "Photography", href: "/projects/photography" },
   {
     name: "Social Media Management",
@@ -39,8 +39,8 @@ function Header() {
           <p
             className={
               asPath === "/"
-                ? "underline underline-offset-4 hover:text-bb-light transition-all"
-                : "hover:text-bb-light transition-all"
+                ? "underline underline-offset-4 text-bb-lighter hover:text-white transition-all"
+                : "hover:text-bb-lighter transition-all"
             }
           >
             HOME
@@ -50,8 +50,8 @@ function Header() {
           <p
             className={
               asPath === "/about"
-                ? "underline underline-offset-4 hover:text-bb-light transition-all"
-                : "hover:text-bb-light transition-all"
+                ? "underline underline-offset-4 text-bb-lighter hover:text-white transition-all"
+                : "hover:text-bb-lighter transition-all"
             }
           >
             ABOUT
@@ -67,8 +67,8 @@ function Header() {
               <span
                 className={
                   asPath.includes("projects") || asPath.includes("portfolio")
-                    ? `underline underline-offset-4 hover:text-bb-light transition-all`
-                    : "hover:text-bb-light transition-all"
+                    ? `underline underline-offset-4 text-bb-lighter hover:text-white transition-all`
+                    : "hover:text-bb-lighter transition-all"
                 }
               >
                 PORTFOLIO
@@ -84,15 +84,15 @@ function Header() {
           </p>
           {dropdownVisible && (
             <div
-              className="absolute uppercase flex flex-col top-[13vh] left-[-1.5rem] p-6 bgradient gap-4 headerdropdown"
+              className="absolute uppercase flex flex-col top-[13vh] left-[-1.5rem] p-6 bgradient gap-6 w-max headerdropdown"
               onClick={() => setdropdownVisible(false)}
             >
               {dropdownLinks.map((link, index) => (
                 <p
                   className={
                     asPath === link.href
-                      ? "underline hover:text-bb-light transition-all"
-                      : "hover:text-bb-light transition-all"
+                      ? "underline underline-offset-4 text-bb-lighter hover:text-white transition-all"
+                      : "hover:text-bb-lighter transition-all"
                   }
                   key={index}
                 >
@@ -109,7 +109,7 @@ function Header() {
         alt="Same Day Turnarounds"
       />
       <p className="hidden md:block">
-        <Link href="/#contact">CONTACT &rarr;</Link>
+        <Link href="/contact">CONTACT &rarr;</Link>
       </p>
       {headerVisible && (
         <nav className="fixed top-[13vh] left-0 w-full z-[100000000000000] bg-bb p-6 text-xl flex gap-8 flex-col h-[87vh]">

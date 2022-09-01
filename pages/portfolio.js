@@ -26,33 +26,38 @@ export default function portfolio({ copy, clients }) {
       description:
         "Delivering high quality videos. Creating corprate videos to sports highlights & theatrical trailers.",
       link: "/projects/video-editing",
-      image: copy.videoEditingCarouselImage,
+      media: copy.videoEditingCarouselImage,
+      type: "video",
     },
     {
       name: "Videography",
       description:
         "Videography that engages your audience and builds strength in your brand.",
       link: "/projects/videography",
-      image: copy.videographyCarouselImage,
+      media: copy.videographyCarouselImage,
+      type: "image",
     },
     {
       name: "Photography",
       description: "Quality photography that builds trust with your clients.",
       link: "/projects/photography",
-      image: copy.photographCarouselImage,
+      media: copy.photographCarouselImage,
+      type: "image",
     },
     {
       name: "Social Media Management",
       description: "Content strategy that builds communities.",
       link: "/projects/social-media-management",
-      image: copy.socialMediaManagementCarouselImage,
+      media: copy.socialMediaManagementCarouselImage,
+      type: "image",
     },
     {
       name: "Motion Graphics",
       description:
         "Premium motion graphics that grab your audience's attention.",
       link: "/projects/motion-design",
-      image: copy.motionDesignCarouselImage,
+      media: copy.motionDesignCarouselImage,
+      type: "image",
     },
   ];
   return (
@@ -107,7 +112,7 @@ export default function portfolio({ copy, clients }) {
 }
 
 function CategorySlide({ category }) {
-  const { name, description, link, image } = category;
+  const { name, description, link, media, type } = category;
   return (
     <div className="relative w-full">
       <div className="p-5 absolute top-0 h-full w-full justify-end flex flex-col gap-4 z-[10]">
@@ -117,19 +122,38 @@ function CategorySlide({ category }) {
           <p className="btn">View {name} Projects &rarr;</p>
         </Link>
       </div>
-      {image ? (
-        <div className="w-full h-[492px] relative">
-          <Image
-            src={"https:" + image.fields.file.url}
-            className="bg-white/50"
-            layout="fill"
-            objectFit="cover"
-            alt=""
-            priority
-          />
-        </div>
-      ) : (
-        <img className="w-full h-[492px] bg-white/50" />
+      {type === "video" && (
+        <>
+          <div className="w-full h-[492px] relative">
+            <video
+              className="w-full h-full object-cover"
+              playsInline
+              autoPlay
+              loop
+              muted
+            >
+              <source src={"https:" + media.fields.file.url} />
+            </video>
+          </div>
+        </>
+      )}
+      {type === "image" && (
+        <>
+          {media ? (
+            <div className="w-full h-[492px] relative">
+              <Image
+                src={"https:" + media.fields.file.url}
+                className="bg-white/50"
+                layout="fill"
+                objectFit="cover"
+                alt=""
+                priority
+              />
+            </div>
+          ) : (
+            <img className="w-full h-[492px] bg-white/50" />
+          )}
+        </>
       )}
     </div>
   );

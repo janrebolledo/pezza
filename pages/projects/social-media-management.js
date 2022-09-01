@@ -42,23 +42,7 @@ export default function Projects({ projects }) {
       </Head>
 
       <section className="px-5 pt-48 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-8">
-          <h1 className="text-7xl col-span-2">Social Media Management</h1>
-          <div className="col-span-6 flex overflow-x-auto w-full gap-4">
-            <p
-              className="bg-bb/50 text-center py-2 px-4 font-bold cursor-pointer flex items-center justify-center whitespace-nowrap"
-              onClick={() => setFilteredProjects(smmProjects)}
-            >
-              ALL
-            </p>
-            <p
-              className="bg-bb/50 text-center py-2 px-4 font-bold cursor-pointer flex items-center justify-center whitespace-nowrap"
-              onClick={() => filterProjects("YouTube Videos")}
-            >
-              YOUTUBE VIDEOS
-            </p>
-          </div>
-        </div>
+        <h1 className="text-7xl">Social Media Management</h1>
       </section>
       <section className="gap-4 grid grid-cols-1 md:grid-cols-4 bgradient px-5 py-12 min-h-[55vh]">
         {filteredProjects.length > 0 ? (

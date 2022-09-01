@@ -77,18 +77,20 @@ function ProjectPage({ project }) {
             <h1 className="text-7xl">{title} - CLIENT OVERVIEW</h1>
             <p>{date}</p>
           </div>
+
+          <section className="pb-8">
+            {documentToReactComponents(content, options)}
+          </section>
+
           <div
             dangerouslySetInnerHTML={{ __html: videoEmbed }}
             className="videoEmbed"
           />
-        </section>
 
-        <section className="px-5 pt-8">
-          {documentToReactComponents(content, options)}
+          <p className="btns mt-8">
+            <Link href="/">&larr; RETURN HOME</Link>
+          </p>
         </section>
-        <p className="px-5 pt-8">
-          <Link href="/">&larr; RETURN HOME</Link>
-        </p>
       </main>
     );
   else
