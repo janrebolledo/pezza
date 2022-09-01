@@ -55,7 +55,7 @@ export default function portfolio({ copy, clients }) {
       name: "Motion Graphics",
       description:
         "Premium motion graphics that grab your audience's attention.",
-      link: "/projects/motion-design",
+      link: "/projects/motion-graphics",
       media: copy.motionDesignCarouselImage,
       type: "image",
     },

@@ -36,10 +36,10 @@ export default function Home({ projects, testimonials, copy }) {
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
 
-      <section className="w-full aspect-video relative">
-        <div className="w-full aspect-video flex flex-col items-start justify-center px-5">
+      <section className="w-full min-h-screen grid grid-cols-2">
+        <div className="w-full flex flex-col items-start justify-center px-5">
           <h1 className="text-5xl md:text-7xl">{copy.landingPageHeading}</h1>
-          <div className="flex flex-row gap-4 z-10">
+          <div className="flex flex-row gap-4">
             <p className="btn">
               <Link href="/contact">Contact &rarr;</Link>
             </p>
@@ -48,9 +48,7 @@ export default function Home({ projects, testimonials, copy }) {
             </p>
           </div>
         </div>
-        <video className="w-full aspect-video bg-white/50 absolute top-0">
-          <source />
-        </video>
+        <div></div>
       </section>
 
       <section className="w-full px-5 py-16">
@@ -72,7 +70,7 @@ export default function Home({ projects, testimonials, copy }) {
             <h1 className="text-5xl md:text-7xl shape tri-d">Services</h1>
             <p>{copy.servicesParagraph}</p>
             <p className="btnt mt-4">
-              <Link href="/projects/videography">View All &rarr;</Link>
+              <Link href="/portfolio">View All &rarr;</Link>
             </p>
           </div>
 

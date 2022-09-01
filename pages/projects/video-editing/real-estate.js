@@ -19,11 +19,11 @@ const filters = [
     name: "CORPORATE VIDEOS",
     href: "/projects/video-editing/corporate-videos",
   },
-  { name: "YOUTUBE VIDEOS", href: "/projects/video-editing/youtube-videos" },
   {
     name: "SPORTS HIGHLIGHTS",
     href: "/projects/video-editing/sports-highlights",
   },
+  { name: "YOUTUBE VIDEOS", href: "/projects/video-editing/youtube-videos" },
 ];
 
 export default function Projects({ projects }) {
