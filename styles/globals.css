@@ -78,48 +78,40 @@ h6 {
   }
 }
 
-/* .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 1em 1em;
-  grid-template-areas:
-    "first second second third"
-    "fourth fourth fifth third"
-    "sixth seventh eighth eighth";
-}
-
 .projects-grid-item:nth-child(1) {
-  grid-area: first;
+  grid-area: 1 / 1 / 2 / 2;
+  aspect-ratio: 1/1;
 }
 
 .projects-grid-item:nth-child(2) {
-  grid-area: second;
+  grid-area: 1 / 2 / 2 / 4;
 }
 
 .projects-grid-item:nth-child(3) {
-  grid-area: third;
+  grid-area: 1 / 4 / 3 / 5;
 }
 
 .projects-grid-item:nth-child(4) {
-  grid-area: fourth;
+  grid-area: 2 / 1 / 3 / 3;
+  aspect-ratio: 2/1;
 }
 
 .projects-grid-item:nth-child(5) {
-  grid-area: fifth;
+  grid-area: 2 / 3 / 3 / 4;
 }
 
 .projects-grid-item:nth-child(6) {
-  grid-area: sixth;
+  grid-area: 3 / 1 / 4 / 2;
+  aspect-ratio: 1/1;
 }
 
 .projects-grid-item:nth-child(7) {
-  grid-area: seventh;
+  grid-area: 3 / 2 / 4 / 3;
 }
 
 .projects-grid-item:nth-child(8) {
-  grid-area: eighth;
-} */
+  grid-area: 3 / 3 / 4 / 5;
+}
 
 @media (min-width: 980px) {
   .shape {

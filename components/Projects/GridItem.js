@@ -5,7 +5,7 @@ export default function GridItem({ project }) {
   const { slug, title, image } = project.fields;
   return (
     <Link href={"/projects/" + slug}>
-      <div className="aspect-square p-12 relative projects-grid-item cursor-pointer group">
+      <div className="p-12 relative projects-grid-item cursor-pointer group">
         <Image
           src={"https:" + image.fields.file.url}
           layout="fill"
