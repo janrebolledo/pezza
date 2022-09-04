@@ -20,7 +20,7 @@ function ProjectCard({ project }) {
           )}
         </div>
         <div className="p-4 flex flex-col gap-2 text-xs">
-          <div className="flex flex-row gap-2 flex-wrap font-bold underline text-sm uppercase mr-2">
+          <div className="flex flex-row gap-4 flex-wrap font-bold underline text-sm uppercase">
             {category.map((category, index) => (
               <Link
                 href={`/projects/` + category.toLowerCase().replace(" ", "-")}

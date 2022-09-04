@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import { createClient } from "contentful";
-import GridItem from "../../components/Projects/GridItem";
+import ProjectGrid from "../../components/Projects/ProjectGrid";
 
 const metadata = {
   title: "Pezza VFX — Social Media Management",
@@ -11,21 +11,9 @@ const metadata = {
 };
 
 export default function Projects({ projects }) {
-  var smmProjects = projects.filter((project) =>
+  projects = projects.filter((project) =>
     project.fields.category?.includes("Social Media Management")
   );
-
-  const [filteredProjects, setFilteredProjects] = useState(smmProjects);
-
-  function filterProjects(filter) {
-    var filtered = projects.filter((project) =>
-      project.fields.category?.includes(filter)
-    );
-
-    console.log(filtered);
-
-    setFilteredProjects(filtered);
-  }
 
   return (
     <main className="text-white">
@@ -44,17 +32,7 @@ export default function Projects({ projects }) {
       <section className="px-5 pt-48 pb-12">
         <h1 className="text-7xl">Social Media Management</h1>
       </section>
-      <section className="gap-4 grid grid-cols-1 md:grid-cols-4 bgradient px-5 py-12 min-h-[55vh]">
-        {filteredProjects.length > 0 ? (
-          <>
-            {filteredProjects.map((project, index) => (
-              <GridItem project={project} key={index} />
-            ))}
-          </>
-        ) : (
-          <p>No projects matched your search.</p>
-        )}
-      </section>
+      <ProjectGrid projects={projects} />
     </main>
   );
 }

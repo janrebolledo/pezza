@@ -1,10 +1,10 @@
 import React from "react";
 import Head from "next/head";
 import { createClient } from "contentful";
-import GridItem from "../../components/Projects/GridItem";
+import ProjectGrid from "../../components/Projects/ProjectGrid";
 
 const metadata = {
-  title: "Pezza VFX — Motion Design",
+  title: "Pezza VFX — Visual Effects",
   description: "Pezza VFX's portfolio",
   keywords:
     "pezza vfx, video production, content strategy, photography, videography, pezza vfx portfolio",
@@ -30,19 +30,9 @@ export default function Projects({ projects }) {
       </Head>
 
       <section className="px-5 pt-48 pb-12">
-        <h1 className="text-7xl">Motion Graphics</h1>
+        <h1 className="text-7xl">Visual Effects</h1>
       </section>
-      <section className="gap-4 grid grid-cols-1 md:grid-cols-4 bgradient px-5 py-12 min-h-[55vh]">
-        {projects.length > 0 ? (
-          <>
-            {projects.map((project, index) => (
-              <GridItem project={project} key={index} />
-            ))}
-          </>
-        ) : (
-          <p>No projects matched your search.</p>
-        )}
-      </section>
+      <ProjectGrid projects={projects} />
     </main>
   );
 }

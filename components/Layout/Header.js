@@ -8,7 +8,7 @@ import Turnarounds from "../../public/turnarounds.png";
 const dropdownLinks = [
   { name: "Video Editing", href: "/projects/video-editing" },
   { name: "Videography", href: "/projects/videography" },
-  { name: "Motion Graphics", href: "/projects/motion-graphics" },
+  { name: "Visual Effects", href: "/projects/visual-effects" },
   { name: "Photography", href: "/projects/photography" },
   {
     name: "Social Media Management",

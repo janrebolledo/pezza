@@ -52,10 +52,10 @@ export default function portfolio({ copy, clients }) {
       type: "image",
     },
     {
-      name: "Motion Graphics",
+      name: "Visual Effects",
       description:
-        "Premium motion graphics that grab your audience's attention.",
-      link: "/projects/motion-graphics",
+        "Premium visual effects that grab your audience's attention.",
+      link: "/projects/visual-effects",
       media: copy.motionDesignCarouselImage,
       type: "video",
     },

@@ -1,11 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import { Navigation, Autoplay } from "swiper";
+import { Navigation, Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import "swiper/css/pagination";
 
 function Testimonials({ testimonials }) {
   return (
@@ -22,7 +23,10 @@ function Testimonials({ testimonials }) {
           delay: 10000,
           disableOnInteraction: false,
         }}
-        modules={[Navigation, Autoplay]}
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[Navigation, Autoplay, Pagination]}
       >
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index}>

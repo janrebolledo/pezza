@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { createClient } from "contentful";
-import GridItem from "../../../components/Projects/GridItem";
+import ProjectGrid from "../../../components/Projects/ProjectGrid";
 
 const metadata = {
   title: "Pezza VFX — Photography",
@@ -70,17 +70,7 @@ export default function Projects({ projects }) {
           </div>
         </div>
       </section>
-      <section className="grid grid-cols-1 md:grid-cols-4 gap-4 projects-grid bgradient px-5 py-12 min-h-[55vh]">
-        {projects.length > 0 ? (
-          <>
-            {projects.map((project, index) => (
-              <GridItem project={project} key={index} />
-            ))}
-          </>
-        ) : (
-          <p>No projects matched your search.</p>
-        )}
-      </section>
+      <ProjectGrid projects={projects} />
     </main>
   );
 }
