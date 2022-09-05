@@ -48,7 +48,50 @@ export default function Home({ projects, testimonials, copy }) {
             </p>
           </div>
         </div>
-        <div></div>
+        <div className="flex items-center justify-center">
+          <div className="grid grid-cols-2 gap-4 items-center">
+            <video
+              autoPlay
+              muted
+              loop
+              className="bg-white aspect-video shadow-lg rounded-xl -rotate-2 translate-x-4 translate-y-3"
+            >
+              <source src={copy.landingPageVideo1} />
+            </video>
+            <video
+              autoPlay
+              muted
+              loop
+              className="bg-white aspect-video shadow-lg rounded-xl rotate-1"
+            >
+              <source src={copy.landingPageVideo2} />
+            </video>
+            <video
+              autoPlay
+              muted
+              loop
+              className="bg-white aspect-video shadow-lg rounded-xl rotate-1 translate-x-6 -translate-y-7"
+            >
+              <source src={copy.landingPageVideo3} />
+            </video>
+            <video
+              autoPlay
+              muted
+              loop
+              className="bg-white aspect-video shadow-lg rounded-xl -rotate-3 -translate-x-2 -translate-y-4"
+            >
+              <source src={copy.landingPageVideo4} />
+            </video>
+            <video
+              autoPlay
+              muted
+              loop
+              className="bg-white aspect-video shadow-lg rounded-xl -rotate-1 -translate-y-12"
+            >
+              <source src={copy.landingPageVideo5} />
+            </video>
+          </div>
+        </div>
       </section>
 
       <section className="w-full px-5 py-16">
