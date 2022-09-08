@@ -174,7 +174,7 @@ function Client({ client }) {
       />
       <div className="flex flex-col gap-2">
         <h3 className="text-3xl">{name}</h3>
-        <p>{stat}</p>
+        <p className="text-white/50">{stat}</p>
         <p className="btn">
           {link && <Link href={link}>View Client &rarr;</Link>}
         </p>
