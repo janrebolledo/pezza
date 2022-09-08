@@ -83,7 +83,7 @@ function ProjectPage({ project }) {
           <div className="flex w-full justify-center">
             <div
               dangerouslySetInnerHTML={{ __html: videoEmbed }}
-              className="videoEmbed 2xl:w-[75%]"
+              className="videoEmbed 2xl:w-[50%]"
             />
           </div>
         ) : (

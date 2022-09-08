@@ -47,24 +47,27 @@ function VisualEffectsGrid({ projects }) {
 }
 
 function VisualEffectsProject({ project }) {
-  const { image1, image2 } = project.fields;
+  const { title, image1, image2 } = project.fields;
 
   return (
-    <ReactCompareSlider
-      className="aspect-video"
-      itemOne={
-        <ReactCompareSliderImage
-          alt={image1.fields.title}
-          src={"https:" + image1.fields.file.url}
-        />
-      }
-      itemTwo={
-        <ReactCompareSliderImage
-          alt={image2.fields.title}
-          src={"https:" + image2.fields.file.url}
-        />
-      }
-    />
+    <div>
+      <h2 className="text-4xl">{title}</h2>
+      <ReactCompareSlider
+        className="aspect-video"
+        itemOne={
+          <ReactCompareSliderImage
+            alt={image1.fields.title}
+            src={"https:" + image1.fields.file.url}
+          />
+        }
+        itemTwo={
+          <ReactCompareSliderImage
+            alt={image2.fields.title}
+            src={"https:" + image2.fields.file.url}
+          />
+        }
+      />
+    </div>
   );
 }
 

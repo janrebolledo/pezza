@@ -40,7 +40,6 @@ function Testimonials({ testimonials }) {
 }
 
 function TestimonialSlide({ testimonial }) {
-  console.log(testimonial.fields);
   return (
     <Link href={testimonial.fields.link || ""}>
       <div className="flex flex-col justify-center items-center gap-12 py-12 cursor-pointer">

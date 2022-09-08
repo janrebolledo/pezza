@@ -57,6 +57,7 @@ h6 {
 
 :root {
   --swiper-theme-color: #ffffff !important;
+  --swiper-pagination-bullet-inactive-color: #fff !important;
 }
 
 .swiper-button-prev {
