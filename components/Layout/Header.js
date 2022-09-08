@@ -19,9 +19,9 @@ function Header() {
 
   const { asPath } = useRouter();
   return (
-    <header className="w-full h-[13vh] z-[100000000000000000] bg-bb text-white font-bold fixed flex flex-row justify-between items-center px-5 shadow-2xl xl:text-2xl">
+    <header className="w-full h-[13vh] z-[100000000000000000] bg-bb text-white font-bold fixed flex flex-row justify-between items-center px-5 shadow-2xl xl:text-3xl">
       <h1
-        className="text-4xl font-normal"
+        className="text-4xl xl:text-5xl font-normal"
         onClick={() => setHeaderVisible(false)}
       >
         <Link href="/">Pezza VFX</Link>
