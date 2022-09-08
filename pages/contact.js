@@ -73,7 +73,7 @@ function Contact({ copy }) {
             name="message"
             placeholder="Message"
             required
-            className="bg-neutral-800 px-6 py-4"
+            className="bg-neutral-800 px-6 py-4 h-64"
           />
           <button className="btn">Send &rarr;</button>
         </form>

@@ -39,8 +39,8 @@ export default function Home({ projects, testimonials, copy }) {
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
 
-      <section className="w-full md:min-h-screen grid md:grid-cols-2 pt-[13vh]">
-        <div className="w-full flex flex-col items-start justify-center px-5">
+      <section className="w-full md:min-h-screen grid md:grid-cols-2 pt-[13vh] px-5">
+        <div className="w-full flex flex-col items-start justify-center">
           <h1 className="text-5xl md:text-7xl">{copy.landingPageHeading}</h1>
           <div className="flex flex-row gap-4">
             <p className="btn">
