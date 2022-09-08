@@ -27,7 +27,7 @@ function Contact({ copy }) {
       </Head>
 
       <section
-        className="bgradient grid grid-cols-1 md:grid-cols-2 px-5 py-8 min-h-[87vh] items-center"
+        className="bgradient grid grid-cols-1 md:grid-cols-2 px-5 py-8 min-h-screen items-center"
         id="contact"
         data-netlify="true"
         method="POST"
