@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { BLOCKS } from "@contentful/rich-text-types";
 import Link from "next/link";
 
 const client = createClient({
@@ -49,7 +49,8 @@ const options = {
 };
 
 function ProjectPage({ project }) {
-  const { title, image, date, content, excerpt, videoEmbed } = project.fields;
+  const { title, image, date, content, excerpt, videoEmbed, category } =
+    project.fields;
 
   return (
     <main className="text-white">
@@ -79,10 +80,12 @@ function ProjectPage({ project }) {
         </section>
 
         {videoEmbed != undefined ? (
-          <div
-            dangerouslySetInnerHTML={{ __html: videoEmbed }}
-            className="videoEmbed"
-          />
+          <div className="flex w-full justify-center">
+            <div
+              dangerouslySetInnerHTML={{ __html: videoEmbed }}
+              className="videoEmbed 2xl:w-[75%]"
+            />
+          </div>
         ) : (
           <>
             {image && (
@@ -90,10 +93,31 @@ function ProjectPage({ project }) {
             )}
           </>
         )}
-
-        <p className="btns mt-8">
-          <Link href="/">&larr; RETURN HOME</Link>
-        </p>
+        {category[0].includes("Photography") && (
+          <p className="btns mt-8">
+            <Link href="/projects/photography">&larr; RETURN</Link>
+          </p>
+        )}
+        {category[0].includes("Video Editing") && (
+          <p className="btns mt-8">
+            <Link href="/projects/video-editing">&larr; RETURN</Link>
+          </p>
+        )}
+        {category[0].includes("Videography") && (
+          <p className="btns mt-8">
+            <Link href="/projects/videography">&larr; RETURN</Link>
+          </p>
+        )}
+        {category[0].includes("Social Media Management") && (
+          <p className="btns mt-8">
+            <Link href="/projects/social-media-management">&larr; RETURN</Link>
+          </p>
+        )}
+        {category[0].includes("Visual Effects") && (
+          <p className="btns mt-8">
+            <Link href="/projects/visual-effects">&larr; RETURN</Link>
+          </p>
+        )}
       </section>
     </main>
   );

@@ -38,7 +38,7 @@ export default function Projects({ projects }) {
 
 function VisualEffectsGrid({ projects }) {
   return (
-    <section className="bgradient px-5 py-12 grid grid-cols-1 md:grid-cols-4 gap-4">
+    <section className="bgradient px-5 py-12 grid grid-cols-1 md:grid-cols-4 gap-4 min-h-screen">
       {projects.map((project, index) => (
         <VisualEffectsProject project={project} key={index} />
       ))}
@@ -51,6 +51,7 @@ function VisualEffectsProject({ project }) {
 
   return (
     <ReactCompareSlider
+      className="aspect-video"
       itemOne={
         <ReactCompareSliderImage
           alt={image1.fields.title}

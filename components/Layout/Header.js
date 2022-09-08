@@ -2,9 +2,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 
-import BasedIn from "../../public/based in.png";
-import Turnarounds from "../../public/turnarounds.png";
-
 const dropdownLinks = [
   { name: "Video Editing", href: "/projects/video-editing" },
   { name: "Videography", href: "/projects/videography" },
@@ -29,11 +26,6 @@ function Header() {
       >
         <Link href="/">Pezza VFX</Link>
       </h1>
-      <img
-        className="w-48 hidden md:block"
-        src={BasedIn.src}
-        alt="Based in Brisbane &amp; Gold Coast"
-      />
       <div className="hidden md:flex flex-row gap-6 headerlinks h-full items-center">
         <Link href="/">
           <p
@@ -103,12 +95,13 @@ function Header() {
           )}
         </div>
       </div>
-      <img
-        className="w-48 hidden md:block"
-        src={Turnarounds.src}
-        alt="Same Day Turnarounds"
-      />
-      <p className="hidden md:block">
+      <p
+        className={
+          asPath === "/contact"
+            ? "underline underline-offset-4 text-bb-lighter hover:text-white transition-all cursor-pointer hidden md:block"
+            : "hover:text-bb-lighter transition-all cursor-pointer hidden md:block"
+        }
+      >
         <Link href="/contact">CONTACT &rarr;</Link>
       </p>
       {headerVisible && (

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Navigation, Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -20,7 +21,7 @@ function Testimonials({ testimonials }) {
         navigation
         loop={true}
         autoplay={{
-          delay: 10000,
+          delay: 15000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -39,28 +40,29 @@ function Testimonials({ testimonials }) {
 }
 
 function TestimonialSlide({ testimonial }) {
+  console.log(testimonial.fields);
   return (
-    <div className="flex flex-col justify-center items-center gap-12">
-      <p className="text-xl md:text-3xl font-bold px-[20%] text-center">
-        &quot;{testimonial.fields.testimonial}&quot;
-      </p>
-      <div className="flex flex-row gap-4 items-center">
-        <Image
-          src={"https:" + testimonial.fields.image.fields.file.url}
-          width={64}
-          height={64}
-          className="rounded-full"
-          alt=""
-        />
-        <div className="h-full flex flex-col">
-          <h4 className="text-xl">{testimonial.fields.name}</h4>
-          <p className="text-white/50 text-sm">
-            {testimonial.fields.profession}
-          </p>
-          <p className="text-white/50 text-sm">{testimonial.fields.stat}</p>
+    <Link href={testimonial.fields.link || ""}>
+      <div className="flex flex-col justify-center items-center gap-12 py-12 cursor-pointer">
+        <p className="text-xl md:text-3xl font-bold px-[20%] text-center">
+          &quot;{testimonial.fields.testimonial}&quot;
+        </p>
+        <div className="flex flex-row gap-4 items-center">
+          <Image
+            src={"https:" + testimonial.fields.image.fields.file.url}
+            width={64}
+            height={64}
+            className="rounded-full"
+            alt=""
+          />
+          <div className="h-full flex flex-col">
+            <h4 className="text-xl">{testimonial.fields.name}</h4>
+            <p className="text-sm">{testimonial.fields.profession}</p>
+            <p className="text-white/50 text-sm">{testimonial.fields.stat}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

@@ -32,7 +32,7 @@ function about({ copy }) {
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
 
-      <section className="px-5 pt-48 py-12 bgradient grid grid-cols-1 gap-8 md:grid-cols-2">
+      <section className="px-5 pt-48 py-12 bgradient grid grid-cols-1 gap-8 md:grid-cols-2 items-center">
         <div className="flex flex-col gap-4">
           <h1 className="text-7xl shape rect-o-d">About Me</h1>
           <p className="whitespace-pre-line font-medium">{copy.aboutMe}</p>
@@ -51,9 +51,9 @@ function about({ copy }) {
       </section>
 
       <section className="px-5 py-12">
-        <div className="flex flex-col md:flex-row justify-between md:items-center">
+        <div className="flex flex-col md:flex-row justify-between md:items-center mb-12">
           <h1 className="text-7xl shape tri-l">Workflow</h1>
-          <div className="bgradient grid gap-16 p-8 grid-cols-4">
+          <div className="bgradient grid gap-32 py-8 px-12 grid-cols-4">
             <div className="flex flex-col gap-2 items-center justify-center">
               <span className="material-symbols-outlined !text-3xl">
                 videocam

@@ -154,7 +154,7 @@ export default function Home({ projects, testimonials, copy }) {
               {copy.serviceHeading3}
             </h2>
             <p>{copy.serviceParagraph3}</p>
-            <Link href="/projects/photography">
+            <Link href="/projects/visual-effects">
               <p className="btns">
                 View {copy.serviceHeading3} Projects &rarr;
               </p>
