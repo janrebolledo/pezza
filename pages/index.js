@@ -1,11 +1,14 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { createClient } from "contentful";
 
 import Section from "../public/section.svg";
 import ProjectsList from "../components/Projects/ProjectsList";
 import ContactSection from "../components/Layout/ContactSection";
 import Testimonials from "../components/Layout/Testimonials";
+
+import VisualEffects from "../public/visual-effects.png";
 
 const metadata = {
   title: "Pezza VFX",
@@ -36,7 +39,7 @@ export default function Home({ projects, testimonials, copy }) {
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
 
-      <section className="w-full min-h-screen grid grid-cols-2">
+      <section className="w-full md:min-h-screen grid md:grid-cols-2 pt-[13vh]">
         <div className="w-full flex flex-col items-start justify-center px-5">
           <h1 className="text-5xl md:text-7xl">{copy.landingPageHeading}</h1>
           <div className="flex flex-row gap-4">
@@ -48,7 +51,7 @@ export default function Home({ projects, testimonials, copy }) {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center p-8 md:p-0">
           <div className="grid grid-cols-2 gap-4 items-center">
             <video
               autoPlay
@@ -147,7 +150,7 @@ export default function Home({ projects, testimonials, copy }) {
 
           <div className="flex flex-col gap-4">
             <h2 className="flex items-center gap-4 text-3xl">
-              <span className="material-symbols-outlined !text-5xl">image</span>
+              <Image src={VisualEffects} width={48} height={48} />
               {copy.serviceHeading3}
             </h2>
             <p>{copy.serviceParagraph3}</p>

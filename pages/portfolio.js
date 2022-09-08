@@ -160,7 +160,7 @@ function CategorySlide({ category }) {
 }
 
 function Client({ client }) {
-  const { name, link } = client.fields;
+  const { name, link, stat } = client.fields;
   const { file, title } = client.fields.picture.fields;
 
   return (
@@ -172,8 +172,9 @@ function Client({ client }) {
         height={124}
         className="rounded-full"
       />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2">
         <h3 className="text-3xl">{name}</h3>
+        <p>{stat}</p>
         <p className="btn">
           {link && <Link href={link}>View Client &rarr;</Link>}
         </p>

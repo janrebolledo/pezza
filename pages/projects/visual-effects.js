@@ -1,7 +1,10 @@
 import React from "react";
 import Head from "next/head";
 import { createClient } from "contentful";
-import ProjectGrid from "../../components/Projects/ProjectGrid";
+import {
+  ReactCompareSlider,
+  ReactCompareSliderImage,
+} from "react-compare-slider";
 
 const metadata = {
   title: "Pezza VFX — Visual Effects",
@@ -11,10 +14,6 @@ const metadata = {
 };
 
 export default function Projects({ projects }) {
-  projects = projects.filter((project) =>
-    project.fields.category?.includes("Motion Graphics")
-  );
-
   return (
     <main className="text-white">
       <Head>
@@ -32,8 +31,39 @@ export default function Projects({ projects }) {
       <section className="px-5 pt-48 pb-12">
         <h1 className="text-7xl">Visual Effects</h1>
       </section>
-      <ProjectGrid projects={projects} />
+      <VisualEffectsGrid projects={projects} />
     </main>
+  );
+}
+
+function VisualEffectsGrid({ projects }) {
+  return (
+    <section className="bgradient px-5 py-12 grid grid-cols-1 md:grid-cols-4 gap-4">
+      {projects.map((project, index) => (
+        <VisualEffectsProject project={project} key={index} />
+      ))}
+    </section>
+  );
+}
+
+function VisualEffectsProject({ project }) {
+  const { image1, image2 } = project.fields;
+
+  return (
+    <ReactCompareSlider
+      itemOne={
+        <ReactCompareSliderImage
+          alt={image1.fields.title}
+          src={"https:" + image1.fields.file.url}
+        />
+      }
+      itemTwo={
+        <ReactCompareSliderImage
+          alt={image2.fields.title}
+          src={"https:" + image2.fields.file.url}
+        />
+      }
+    />
   );
 }
 
@@ -43,7 +73,9 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   });
 
-  const res = await client.getEntries({ content_type: "project" });
+  const res = await client.getEntries({
+    content_type: "motionGraphicsProject",
+  });
 
   return {
     props: {

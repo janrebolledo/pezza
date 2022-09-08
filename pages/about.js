@@ -8,6 +8,8 @@ import DaVinci from "../public/images/program-logos/davinci.png";
 import AVID from "../public/images/program-logos/avid.png";
 import Vegas from "../public/images/program-logos/vegas.png";
 
+import Arrow from "../public/arrow.svg";
+
 const metadata = {
   title: "Pezza VFX — About",
   description: "About Pezza VFX, skills, workflow & more.",
@@ -49,9 +51,32 @@ function about({ copy }) {
       </section>
 
       <section className="px-5 py-12">
-        <div>
+        <div className="flex flex-col md:flex-row justify-between md:items-center">
           <h1 className="text-7xl shape tri-l">Workflow</h1>
-          <div className="bgradient grid grid-cols-2 md:grid-cols-4"></div>
+          <div className="bgradient grid gap-16 p-8 grid-cols-4">
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <span className="material-symbols-outlined !text-3xl">
+                videocam
+              </span>
+              <h3 className="text-2xl">Brief</h3>
+            </div>
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <span className="material-symbols-outlined !text-3xl">edit</span>
+              <h3 className="text-2xl">Edit</h3>
+            </div>
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <span className="material-symbols-outlined !text-3xl">
+                rate_review
+              </span>
+              <h3 className="text-2xl">Review</h3>
+            </div>
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <span className="material-symbols-outlined !text-3xl">
+                credit_card
+              </span>
+              <h3 className="text-2xl">Deliver</h3>
+            </div>
+          </div>
         </div>
         <div className="flex flex-col gap-4 mt-4">
           <div className="flex w-full md:w-auto flex-col md:flex-row">
@@ -60,13 +85,21 @@ function about({ copy }) {
             </h1>
             <p>{copy.workflowParagraph1}</p>
           </div>
-          <div className="flex w-full md:w-auto flex-col md:flex-row md:ml-[25%]">
+          <div className="flex w-full md:w-auto flex-col md:flex-row">
+            <img
+              src={Arrow.src}
+              className="-mt-16 ml-10 mr-8 hidden md:block"
+            />
             <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24 mb-4">
               02.
             </h1>
             <p>{copy.workflowParagraph2}</p>
           </div>
-          <div className="flex w-full md:w-auto flex-col md:flex-row md:ml-[50%]">
+          <div className="flex w-full md:w-auto flex-col md:flex-row md:ml-[25%]">
+            <img
+              src={Arrow.src}
+              className="-mt-16 ml-10 mr-8 hidden md:block"
+            />
             <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24 mb-4">
               03.
             </h1>

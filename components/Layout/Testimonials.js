@@ -57,6 +57,7 @@ function TestimonialSlide({ testimonial }) {
           <p className="text-white/50 text-sm">
             {testimonial.fields.profession}
           </p>
+          <p className="text-white/50 text-sm">{testimonial.fields.stat}</p>
         </div>
       </div>
     </div>
