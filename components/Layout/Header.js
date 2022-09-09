@@ -82,7 +82,7 @@ function Header() {
               {dropdownLinks.map((link, index) => (
                 <p
                   className={
-                    asPath === link.href
+                    asPath.includes(link.href)
                       ? "underline underline-offset-4 text-bb-lighter hover:text-white transition-all"
                       : "hover:text-bb-lighter transition-all"
                   }

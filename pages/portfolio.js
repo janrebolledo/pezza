@@ -114,48 +114,48 @@ export default function portfolio({ copy, clients }) {
 function CategorySlide({ category }) {
   const { name, description, link, media, type } = category;
   return (
-    <div className="relative w-full">
-      <div className="p-5 absolute top-0 h-full w-full justify-end flex flex-col gap-4 z-[10]">
-        <h1 className="text-5xl">{name}</h1>
-        <p>{description}</p>
-        <Link href={link}>
+    <Link href={link}>
+      <div className="relative w-full">
+        <div className="p-5 absolute top-0 h-full w-full justify-end flex flex-col gap-4 z-[10]">
+          <h1 className="text-5xl">{name}</h1>
+          <p>{description}</p>
           <p className="btn">View {name} Projects &rarr;</p>
-        </Link>
-      </div>
-      {type === "video" && (
-        <>
-          <div className="w-full h-[492px] relative">
-            <video
-              className="w-full h-full object-cover"
-              playsInline
-              autoPlay
-              loop
-              muted
-            >
-              <source src={"https:" + media.fields.file.url} />
-            </video>
-          </div>
-        </>
-      )}
-      {type === "image" && (
-        <>
-          {media ? (
+        </div>
+        {type === "video" && (
+          <>
             <div className="w-full h-[492px] relative">
-              <Image
-                src={"https:" + media.fields.file.url}
-                className="bg-white/50"
-                layout="fill"
-                objectFit="cover"
-                alt=""
-                priority
-              />
+              <video
+                className="w-full h-full object-cover"
+                playsInline
+                autoPlay
+                loop
+                muted
+              >
+                <source src={"https:" + media.fields.file.url} />
+              </video>
             </div>
-          ) : (
-            <img className="w-full h-[492px] bg-white/50" />
-          )}
-        </>
-      )}
-    </div>
+          </>
+        )}
+        {type === "image" && (
+          <>
+            {media ? (
+              <div className="w-full h-[492px] relative">
+                <Image
+                  src={"https:" + media.fields.file.url}
+                  className="bg-white/50"
+                  layout="fill"
+                  objectFit="cover"
+                  alt=""
+                  priority
+                />
+              </div>
+            ) : (
+              <img className="w-full h-[492px] bg-white/50" />
+            )}
+          </>
+        )}
+      </div>
+    </Link>
   );
 }
 
@@ -176,7 +176,13 @@ function Client({ client }) {
         <h3 className="text-3xl">{name}</h3>
         <p className="text-white/50">{stat}</p>
         <p className="btn">
-          {link && <Link href={link}>View Client &rarr;</Link>}
+          {link.includes("pezzavfx.com") ? (
+            <Link href={link}>View Project &rarr;</Link>
+          ) : (
+            <a href={link} target="_blank">
+              View Client &rarr;
+            </a>
+          )}
         </p>
       </div>
     </div>

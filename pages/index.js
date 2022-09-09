@@ -39,9 +39,9 @@ export default function Home({ projects, testimonials, copy }) {
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
 
-      <section className="w-full md:min-h-screen grid md:grid-cols-2 pt-[13vh] px-5">
+      <section className="w-full md:min-h-screen grid md:grid-cols-2 pt-[13vh] gap-4 px-5">
         <div className="w-full flex flex-col items-start justify-center">
-          <h1 className="text-5xl md:text-7xl">{copy.landingPageHeading}</h1>
+          <h1 className="text-5xl md:text-7xl">{copy.landingPage}</h1>
           <div className="flex flex-row gap-4">
             <p className="btn">
               <Link href="/contact">Contact &rarr;</Link>
@@ -53,46 +53,54 @@ export default function Home({ projects, testimonials, copy }) {
         </div>
         <div className="flex items-center justify-center p-8 md:p-0">
           <div className="grid grid-cols-2 gap-4 items-center">
-            <video
-              autoPlay
-              muted
-              loop
-              className="bg-white aspect-video shadow-lg rounded-xl -rotate-2 translate-x-4 translate-y-3"
-            >
-              <source src={copy.landingPageVideo1} />
-            </video>
-            <video
-              autoPlay
-              muted
-              loop
-              className="bg-white aspect-video shadow-lg rounded-xl rotate-1"
-            >
-              <source src={copy.landingPageVideo2} />
-            </video>
-            <video
-              autoPlay
-              muted
-              loop
-              className="bg-white aspect-video shadow-lg rounded-xl rotate-1 translate-x-6 -translate-y-7"
-            >
-              <source src={copy.landingPageVideo3} />
-            </video>
-            <video
-              autoPlay
-              muted
-              loop
-              className="bg-white aspect-video shadow-lg rounded-xl -rotate-3 -translate-x-2 -translate-y-4"
-            >
-              <source src={copy.landingPageVideo4} />
-            </video>
-            <video
-              autoPlay
-              muted
-              loop
-              className="bg-white aspect-video shadow-lg rounded-xl -rotate-1 -translate-y-12"
-            >
-              <source src={copy.landingPageVideo5} />
-            </video>
+            <Link href={copy.landingPageVideo1Link || ""}>
+              <video
+                autoPlay
+                muted
+                loop
+                className="bg-white aspect-video shadow-lg rounded-xl -rotate-2 translate-x-4 translate-y-3 cursor-pointer"
+              >
+                <source src={copy.landingPageVideo1.fields.file.url} />
+              </video>
+            </Link>
+            <Link href={copy.landingPageVideo2Link || ""}>
+              <img
+                autoPlay
+                muted
+                loop
+                className="bg-white aspect-video shadow-lg rounded-xl rotate-1 cursor-pointer"
+                src={copy.landingPageVideo2.fields.file.url}
+              />
+            </Link>
+            <Link href={copy.landingPageVideo3Link || ""}>
+              <img
+                autoPlay
+                muted
+                loop
+                className="bg-white aspect-video shadow-lg rounded-xl rotate-1 cursor-pointer"
+                src={copy.landingPageVideo3.fields.file.url}
+              />
+            </Link>
+            <Link href={copy.landingPageVideo4Link || ""}>
+              <video
+                autoPlay
+                muted
+                loop
+                className="bg-white aspect-video shadow-lg rounded-xl -rotate-3 -translate-x-2 -translate-y-4 cursor-pointer"
+              >
+                <source src={copy.landingPageVideo4.fields.file.url} />
+              </video>
+            </Link>
+            <Link href={copy.landingPageVideo5Link || ""}>
+              <video
+                autoPlay
+                muted
+                loop
+                className="bg-white aspect-video shadow-lg rounded-xl -rotate-1 -translate-y-12 cursor-pointer"
+              >
+                <source src={copy.landingPageVideo5.fields.file.url} />
+              </video>
+            </Link>
           </div>
         </div>
       </section>

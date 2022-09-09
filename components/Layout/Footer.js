@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Twitter from "../../public/social-icons/Twitter.png";
+import Instagram from "../../public/social-icons/Instagram.png";
 import Email from "../../public/social-icons/Email.png";
 
 function Footer() {
@@ -19,6 +20,9 @@ function Footer() {
         <div className="flex flex-row gap-6">
           <a href="https://twitter.com/pezzavfx">
             <Image src={Twitter} width={32} height={32} alt="Twitter" />
+          </a>
+          <a href="https://instagram.com/pezzavfx">
+            <Image src={Instagram} width={32} height={32} alt="Instagram" />
           </a>
           <a href="mailto:perrybriggs@pezzavfx.com">
             <Image src={Email} width={32} height={32} alt="Email" />

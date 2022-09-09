@@ -86,20 +86,14 @@ function about({ copy }) {
             <p>{copy.workflowParagraph1}</p>
           </div>
           <div className="flex w-full md:w-auto flex-col md:flex-row">
-            <img
-              src={Arrow.src}
-              className="-mt-16 ml-10 mr-8 hidden md:block"
-            />
+            <img src={Arrow.src} className="mr-8 hidden md:block" />
             <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24 mb-4">
               02.
             </h1>
             <p>{copy.workflowParagraph2}</p>
           </div>
           <div className="flex w-full md:w-auto flex-col md:flex-row md:ml-[25%]">
-            <img
-              src={Arrow.src}
-              className="-mt-16 ml-10 mr-8 hidden md:block"
-            />
+            <img src={Arrow.src} className="mr-8 hidden md:block" />
             <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24 mb-4">
               03.
             </h1>

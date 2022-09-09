@@ -21,7 +21,7 @@ function Testimonials({ testimonials }) {
         navigation
         loop={true}
         autoplay={{
-          delay: 15000,
+          delay: 12000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -40,8 +40,17 @@ function Testimonials({ testimonials }) {
 }
 
 function TestimonialSlide({ testimonial }) {
+  const link = testimonial.fields.link || "";
+
+  let props = {
+    target: "_blank",
+  };
+
+  if (link.includes("pezzavfx.com")) {
+    props.target = "_self";
+  }
   return (
-    <Link href={testimonial.fields.link || ""}>
+    <a href={link || ""} {...props}>
       <div className="flex flex-col justify-center items-center gap-12 py-12 cursor-pointer">
         <p className="text-xl md:text-3xl font-bold px-[20%] text-center">
           &quot;{testimonial.fields.testimonial}&quot;
@@ -61,7 +70,7 @@ function TestimonialSlide({ testimonial }) {
           </div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
 

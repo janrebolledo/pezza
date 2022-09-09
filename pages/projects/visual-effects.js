@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { createClient } from "contentful";
 import {
   ReactCompareSlider,
@@ -38,7 +39,7 @@ export default function Projects({ projects }) {
 
 function VisualEffectsGrid({ projects }) {
   return (
-    <section className="bgradient px-5 py-12 grid grid-cols-1 md:grid-cols-4 gap-4 min-h-screen">
+    <section className="bgradient px-5 py-12 grid grid-cols-1 md:grid-cols-2 gap-4 min-h-screen">
       {projects.map((project, index) => (
         <VisualEffectsProject project={project} key={index} />
       ))}
@@ -47,13 +48,14 @@ function VisualEffectsGrid({ projects }) {
 }
 
 function VisualEffectsProject({ project }) {
-  const { title, image1, image2 } = project.fields;
+  const { title, description, image1, image2, link } = project.fields;
 
   return (
-    <div>
-      <h2 className="text-4xl">{title}</h2>
+    <div className="flex flex-col gap-4 ">
+      <h2 className="text-4xl text-center">{title}</h2>
+      <p className="text-center">{description}</p>
       <ReactCompareSlider
-        className="aspect-video"
+        className="aspect-video shadow-2xl"
         itemOne={
           <ReactCompareSliderImage
             alt={image1.fields.title}
@@ -67,6 +69,15 @@ function VisualEffectsProject({ project }) {
           />
         }
       />
+      <div className="flex flex-row justify-between">
+        <p>BEFORE</p>
+        <p>AFTER</p>
+      </div>
+      {link && (
+        <p className="btns">
+          <Link href={link}>View Project &rarr;</Link>
+        </p>
+      )}
     </div>
   );
 }

@@ -8,7 +8,7 @@ function ProjectCard({ project }) {
   return (
     <Link href={`/projects/` + slug}>
       <div className="border-2 border-solid border-white bg-neutral-900">
-        <div className="relative w-full aspect-video">
+        <div className="relative w-full aspect-video cursor-pointer">
           {image && (
             <Image
               src={"https:" + image.fields.file.url}
@@ -26,11 +26,11 @@ function ProjectCard({ project }) {
                 href={`/projects/` + category.toLowerCase().replace(" ", "-")}
                 key={index}
               >
-                <p>{category}</p>
+                <p className="cursor-pointer">{category}</p>
               </Link>
             ))}
           </div>
-          <h2 className="text-3xl">{title}</h2>
+          <h2 className="text-3xl cursor-pointer">{title}</h2>
           <p className="text-sm">{description}</p>
           <p className="btns">View Project &rarr;</p>
         </div>
