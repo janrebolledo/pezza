@@ -58,6 +58,7 @@ export default function Home({ projects, testimonials, copy }) {
                 autoPlay
                 muted
                 loop
+                playsInline
                 className="bg-white aspect-video shadow-lg rounded-xl -rotate-2 translate-x-4 translate-y-3 cursor-pointer"
               >
                 <source src={copy.landingPageVideo1.fields.file.url} />
@@ -65,18 +66,12 @@ export default function Home({ projects, testimonials, copy }) {
             </Link>
             <Link href={copy.landingPageVideo2Link || ""}>
               <img
-                autoPlay
-                muted
-                loop
                 className="bg-white aspect-video shadow-lg rounded-xl rotate-1 cursor-pointer"
                 src={copy.landingPageVideo2.fields.file.url}
               />
             </Link>
             <Link href={copy.landingPageVideo3Link || ""}>
               <img
-                autoPlay
-                muted
-                loop
                 className="bg-white aspect-video shadow-lg rounded-xl rotate-1 cursor-pointer"
                 src={copy.landingPageVideo3.fields.file.url}
               />
@@ -86,6 +81,7 @@ export default function Home({ projects, testimonials, copy }) {
                 autoPlay
                 muted
                 loop
+                playsInline
                 className="bg-white aspect-video shadow-lg rounded-xl -rotate-3 -translate-x-2 -translate-y-4 cursor-pointer"
               >
                 <source src={copy.landingPageVideo4.fields.file.url} />
@@ -96,6 +92,7 @@ export default function Home({ projects, testimonials, copy }) {
                 autoPlay
                 muted
                 loop
+                playsInline
                 className="bg-white aspect-video shadow-lg rounded-xl -rotate-1 -translate-y-12 cursor-pointer"
               >
                 <source src={copy.landingPageVideo5.fields.file.url} />
