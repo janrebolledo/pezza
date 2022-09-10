@@ -150,7 +150,7 @@ function CategorySlide({ category }) {
                 />
               </div>
             ) : (
-              <img className="w-full h-[492px] bg-white/50" />
+              <img className="w-full h-[492px] bg-white/50" alt="" />
             )}
           </>
         )}
@@ -179,7 +179,7 @@ function Client({ client }) {
           {link.includes("pezzavfx.com") ? (
             <Link href={link}>View Project &rarr;</Link>
           ) : (
-            <a href={link} target="_blank">
+            <a href={link} target="_blank" rel="noreferrer">
               View Client &rarr;
             </a>
           )}

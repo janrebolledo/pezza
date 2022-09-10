@@ -44,6 +44,7 @@ function TestimonialSlide({ testimonial }) {
 
   let props = {
     target: "_blank",
+    rel: "noreferrer",
   };
 
   if (link.includes("pezzavfx.com")) {
