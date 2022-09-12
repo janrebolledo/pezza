@@ -18,13 +18,25 @@ function Footer() {
       </div>
       <div className="flex flex-col items-center md:items-end">
         <div className="flex flex-row gap-6">
-          <a href="https://twitter.com/pezzavfx">
+          <a
+            href="https://twitter.com/pezzavfx"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image src={Twitter} width={32} height={32} alt="Twitter" />
           </a>
-          <a href="https://instagram.com/pezzavfx">
+          <a
+            href="https://instagram.com/pezzavfx"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image src={Instagram} width={32} height={32} alt="Instagram" />
           </a>
-          <a href="mailto:perrybriggs@pezzavfx.com">
+          <a
+            href="mailto:perrybriggs@pezzavfx.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image src={Email} width={32} height={32} alt="Email" />
           </a>
         </div>
