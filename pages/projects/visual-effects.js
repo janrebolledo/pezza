@@ -39,7 +39,7 @@ export default function Projects({ projects }) {
 
 function VisualEffectsGrid({ projects }) {
   return (
-    <section className="bgradient px-5 py-12 grid grid-cols-1 md:grid-cols-2 gap-16 min-h-screen">
+    <section className="bgradient px-5 py-12 grid grid-cols-1 md:grid-cols-2 gap-32 min-h-screen">
       {projects.map((project, index) => (
         <VisualEffectsProject project={project} key={index} />
       ))}

@@ -63,7 +63,7 @@ export default function Home({ projects, testimonials, copy }) {
             </Link>
             <Link href={copy.landingPageVideo3Link || ""}>
               <img
-                className="aspect-video shadow-lg rounded-xl rotate-1 cursor-pointer scale-110 z-10 md:scale-100"
+                className="aspect-video shadow-lg rounded-xl rotate-1 cursor-pointer scale-110 md:scale-100"
                 src={copy.landingPageVideo3.fields.file.url}
               />
             </Link>
@@ -73,7 +73,7 @@ export default function Home({ projects, testimonials, copy }) {
                 muted
                 loop
                 playsInline
-                className="aspect-video shadow-lg rounded-xl rotate-3 -translate-x-2 translate-y-24 z-10 cursor-pointer scale-110 md:scale-100"
+                className="aspect-video shadow-lg rounded-xl rotate-3 -translate-x-2 translate-y-24 cursor-pointer scale-110 md:scale-100"
               >
                 <source src={copy.landingPageVideo4.fields.file.url} />
               </video>
@@ -95,7 +95,7 @@ export default function Home({ projects, testimonials, copy }) {
                 muted
                 loop
                 playsInline
-                className="aspect-video shadow-lg rounded-xl -rotate-2 translate-x-[50%] translate-y-[-125%] z-[5] scale-125 cursor-pointer"
+                className="aspect-video shadow-lg rounded-xl -rotate-2 translate-x-[50%] translate-y-[-125%] z-[5] scale-150 cursor-pointer"
               >
                 <source src={copy.landingPageVideo1.fields.file.url} />
               </video>
