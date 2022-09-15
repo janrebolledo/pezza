@@ -53,7 +53,7 @@ function about({ copy }) {
       <section className="px-5 py-12">
         <div className="flex flex-col md:flex-row justify-between md:items-center mb-12">
           <h1 className="text-7xl shape tri-l">Workflow</h1>
-          <div className="bgradient grid gap-32 py-8 px-12 grid-cols-4">
+          <div className="bgradient grid gap-12 md:gap-32 py-8 px-12 grid-cols-2 md:grid-cols-4">
             <div className="flex flex-col gap-2 items-center justify-center">
               <span className="material-symbols-outlined !text-3xl">
                 videocam

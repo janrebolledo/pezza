@@ -114,6 +114,13 @@ h6 {
   grid-area: 3 / 3 / 4 / 5;
 }
 
+@media (max-width: 980px) {
+  .projects-grid-item {
+    grid-area: unset !important;
+    aspect-ratio: 1/1 !important;
+  }
+}
+
 @media (min-width: 980px) {
   .shape {
     position: relative;
