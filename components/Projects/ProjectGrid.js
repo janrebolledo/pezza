@@ -3,7 +3,7 @@ import GridItem from "./GridItem";
 
 function ProjectGrid({ projects }) {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-4 gap-4 projects-grid bgradient px-5 py-12 min-h-[55vh]">
+    <section className="grid grid-cols-1 md:grid-cols-4 gap-4 projects-grid bgradient px-5 py-12 min-h-screen">
       {projects.length > 0 ? (
         <>
           {projects.map((project, index) => (

@@ -8,8 +8,6 @@ import DaVinci from "../public/images/program-logos/davinci.png";
 import AVID from "../public/images/program-logos/avid.png";
 import Vegas from "../public/images/program-logos/vegas.png";
 
-import Arrow from "../public/arrow.svg";
-
 const metadata = {
   title: "Pezza VFX — About",
   description: "About Pezza VFX, skills, workflow & more.",
@@ -53,7 +51,7 @@ function about({ copy }) {
       <section className="px-5 py-12">
         <div className="flex flex-col md:flex-row justify-between md:items-center mb-12">
           <h1 className="text-7xl shape tri-l">Workflow</h1>
-          <div className="bgradient grid gap-12 md:gap-32 py-8 px-12 grid-cols-2 md:grid-cols-4">
+          <div className="bgradient grid gap-12 md:gap-32 py-8 px-12 grid-cols-2 md:grid-cols-4 ml-4">
             <div className="flex flex-col gap-2 items-center justify-center">
               <span className="material-symbols-outlined !text-3xl">
                 videocam
@@ -85,15 +83,13 @@ function about({ copy }) {
             </h1>
             <p>{copy.workflowParagraph1}</p>
           </div>
-          <div className="flex w-full md:w-auto flex-col md:flex-row">
-            <img src={Arrow.src} className="mr-8 hidden md:block" alt="" />
+          <div className="flex w-full md:w-auto flex-col md:flex-row lg:ml-[30%]">
             <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24 mb-4">
               02.
             </h1>
             <p>{copy.workflowParagraph2}</p>
           </div>
-          <div className="flex w-full md:w-auto flex-col md:flex-row md:ml-[25%]">
-            <img src={Arrow.src} className="mr-8 hidden md:block" alt="" />
+          <div className="flex w-full md:w-auto flex-col md:flex-row lg:ml-[60%]">
             <h1 className="text-7xl p-2 w-[90px] h-[90px] bgradient max-w-max max-h-min mr-24 mb-4">
               03.
             </h1>

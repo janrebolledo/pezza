@@ -117,8 +117,8 @@ export default function Home({ projects, testimonials, copy }) {
       </section>
 
       <section className="relative">
-        <img src={Section.src} className="hidden md:block w-full" alt="" />
-        <div className="md:absolute top-0 w-full h-full p-5 py-12 md:py-5 grid items-center md:grid-cols-4 gap-8 bgradient md:bg-none">
+        <img src={Section.src} className="hidden lg:block w-full" alt="" />
+        <div className="lg:absolute top-0 w-full h-full p-5 py-12 lg:py-5 grid items-center lg:grid-cols-4 gap-8 bgradient lg:bg-none">
           <div>
             <h1 className="text-5xl md:text-7xl shape tri-d">Services</h1>
             <p>{copy.servicesParagraph}</p>
