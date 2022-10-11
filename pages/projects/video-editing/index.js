@@ -55,7 +55,7 @@ export default function Projects({ projects }) {
       </Head>
 
       <section className="px-5 pt-48 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-8">
+        <div className="grid grid-cols-1 lg:grid-cols-8">
           <h1 className="text-7xl col-span-2">Video Editing</h1>
           <div className="col-span-6 flex overflow-x-auto w-full gap-4">
             {filters.map((filter, index) => (

@@ -99,7 +99,7 @@ export default function portfolio({ copy, clients }) {
 
       <section className="px-5 py-16">
         <h1 className="text-7xl mb-8 shape rect-f-l">Recent Clients</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-rows-2 gap-4">
           {clients.map((client, index) => (
             <Client client={client} key={index} />
           ))}

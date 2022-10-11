@@ -14,7 +14,7 @@ export default function GridItem({ project }) {
           priority
           alt=""
         />
-        <h1 className="text-5xl z-10 absolute top-0 left-0 p-8 w-full h-full flex items-end bg-gradient-to-t from-black to-transparent">
+        <h1 className="text-2xl lg:text-5xl z-10 absolute top-0 left-0 p-8 w-full h-full flex items-end bg-gradient-to-t from-black to-transparent">
           {title}
         </h1>
       </div>

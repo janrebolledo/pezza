@@ -54,53 +54,17 @@ export default function Home({ projects, testimonials, copy }) {
           </div>
         </div>
         <div className="flex items-center justify-center p-8 md:p-0">
-          <div className="grid grid-cols-2 gap-4 items-center">
-            <Link href={copy.landingPageVideo2Link || ""}>
-              <img
-                className="aspect-video shadow-lg rounded-xl -rotate-2 -translate-x-8 translate-y-4 cursor-pointer scale-110 md:scale-100"
-                src={copy.landingPageVideo2.fields.file.url}
-              />
-            </Link>
-            <Link href={copy.landingPageVideo3Link || ""}>
-              <img
-                className="aspect-video shadow-lg rounded-xl rotate-1 translate-x-6 cursor-pointer z-10 scale-110 md:scale-100"
-                src={copy.landingPageVideo3.fields.file.url}
-              />
-            </Link>
-            <Link href={copy.landingPageVideo4Link || ""}>
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="aspect-video shadow-lg rounded-xl rotate-3 -translate-x-16 translate-y-36 z-10 cursor-pointer scale-110 md:scale-100"
-              >
-                <source src={copy.landingPageVideo4.fields.file.url} />
-              </video>
-            </Link>
-            <Link href={copy.landingPageVideo5Link || ""}>
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="aspect-video shadow-lg rounded-xl -rotate-6 translate-y-36 cursor-pointer scale-110 md:scale-100"
-              >
-                <source src={copy.landingPageVideo5.fields.file.url} />
-              </video>
-            </Link>
-            <Link href={copy.landingPageVideo1Link || ""}>
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="aspect-video shadow-lg rounded-xl -rotate-2 translate-x-[50%] translate-y-[-125%] z-[5] scale-[130%] cursor-pointer"
-              >
-                <source src={copy.landingPageVideo1.fields.file.url} />
-              </video>
-            </Link>
-          </div>
+          <Link href={copy.landingPageVideo1Link || ""}>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="aspect-video shadow-lg rounded-xl"
+            >
+              <source src={copy.landingPageVideo1.fields.file.url} />
+            </video>
+          </Link>
         </div>
       </section>
 
