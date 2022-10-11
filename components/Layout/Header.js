@@ -7,10 +7,10 @@ const dropdownLinks = [
   { name: "Videography", href: "/projects/videography" },
   { name: "Visual Effects", href: "/projects/visual-effects" },
   { name: "Photography", href: "/projects/photography" },
-  {
-    name: "Social Media Management",
-    href: "/projects/social-media-management",
-  },
+  // {
+  //   name: "Social Media Management",
+  //   href: "/projects/social-media-management",
+  // },
 ];
 
 function Header() {
