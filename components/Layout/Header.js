@@ -19,14 +19,14 @@ function Header() {
 
   const { asPath } = useRouter();
   return (
-    <header className="w-full h-[13vh] z-[100000000000000000] bg-bb text-white font-bold fixed flex flex-row justify-between items-center px-5 shadow-2xl xl:text-3xl">
+    <header className="w-full h-[13vh] z-[100000000000000000] bg-bb text-white font-bold fixed flex flex-row justify-between items-center px-5 shadow-2xl text-xl xl:text-3xl">
       <h1
         className="text-4xl xl:text-5xl font-normal"
         onClick={() => setHeaderVisible(false)}
       >
         <Link href="/">Pezza VFX</Link>
       </h1>
-      <div className="hidden md:flex flex-row gap-6 headerlinks h-full items-center">
+      <div className="hidden lg:flex flex-row gap-6 headerlinks h-full items-center">
         <Link href="/">
           <p
             className={
@@ -98,8 +98,8 @@ function Header() {
       <p
         className={
           asPath === "/contact"
-            ? "underline underline-offset-4 text-bb-lighter hover:text-white transition-all cursor-pointer hidden md:block"
-            : "hover:text-bb-lighter transition-all cursor-pointer hidden md:block"
+            ? "underline underline-offset-4 text-bb-lighter hover:text-white transition-all cursor-pointer hidden lg:block"
+            : "hover:text-bb-lighter transition-all cursor-pointer hidden lg:block"
         }
       >
         <Link href="/contact">CONTACT &rarr;</Link>
@@ -119,7 +119,9 @@ function Header() {
             <Link href="/about">ABOUT</Link>
           </p>
           <p className="w-full flex relative justify-between items-center">
-            <Link href="/portfolio">PORTFOLIO</Link>
+            <span onClick={() => setHeaderVisible(!headerVisible)}>
+              <Link href="/portfolio">PORTFOLIO</Link>
+            </span>
             <span
               className="material-symbols-outlined"
               onClick={() => setdropdownVisible(!dropdownVisible)}
@@ -142,7 +144,7 @@ function Header() {
         </nav>
       )}
       <p
-        className="material-icons hidden-i"
+        className="material-icons lg:!hidden"
         onClick={() => setHeaderVisible(!headerVisible)}
       >
         {headerVisible ? "close" : "menu"}

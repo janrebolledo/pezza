@@ -44,13 +44,13 @@ export default function portfolio({ copy, clients }) {
       media: copy.photographCarouselImage,
       type: "image",
     },
-    {
-      name: "Social Media Management",
-      description: "Content strategy that builds communities.",
-      link: "/projects/social-media-management",
-      media: copy.socialMediaManagementCarouselImage,
-      type: "image",
-    },
+    // {
+    //   name: "Social Media Management",
+    //   description: "Content strategy that builds communities.",
+    //   link: "/projects/social-media-management",
+    //   media: copy.socialMediaManagementCarouselImage,
+    //   type: "image",
+    // },
     {
       name: "Visual Effects",
       description:
