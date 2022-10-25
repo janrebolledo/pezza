@@ -73,12 +73,6 @@ h6 {
   opacity: 0.5;
 }
 
-@media (min-width: 768px) {
-  .hidden-i {
-    display: none !important;
-  }
-}
-
 .projects-grid-item:nth-child(1) {
   grid-area: 1 / 1 / 2 / 2;
   aspect-ratio: 1/1;
