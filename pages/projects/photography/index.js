@@ -51,9 +51,9 @@ export default function Projects({ projects }) {
       </Head>
 
       <section className="px-5 pt-48 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-8">
-          <h1 className="text-7xl col-span-2">Photography</h1>
-          <div className="col-span-6 flex overflow-x-auto w-full gap-4">
+        <div className="flex flex-col gap-4 lg:flex-row justify-between">
+          <h1 className="text-5xl">Photography</h1>
+          <div className="flex overflow-x-auto w-full lg:w-max gap-4">
             {filters.map((filter, index) => (
               <Link href={filter.href} key={index}>
                 <p
