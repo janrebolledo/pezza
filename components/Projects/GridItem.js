@@ -5,7 +5,7 @@ export default function GridItem({ project }) {
   const { slug, title, image } = project.fields;
   return (
     <Link href={"/projects/" + slug}>
-      <div className="p-12 relative projects-grid-item cursor-pointer group w-full h-full">
+      <div className="relative projects-grid-item cursor-pointer group w-full h-full !aspect-video">
         <Image
           src={"https:" + image.fields.file.url}
           layout="fill"
@@ -14,7 +14,7 @@ export default function GridItem({ project }) {
           priority
           alt=""
         />
-        <h1 className="text-2xl lg:text-4xl z-10 absolute top-0 left-0 p-8 w-full h-full flex items-end bg-gradient-to-t from-black to-transparent">
+        <h1 className="p-12 text-2xl lg:text-4xl z-10 absolute top-0 left-0 w-full h-full flex items-end bg-gradient-to-t from-black to-transparent">
           {title}
         </h1>
       </div>

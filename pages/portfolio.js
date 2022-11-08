@@ -41,7 +41,7 @@ export default function portfolio({ copy, clients }) {
       name: "Photography",
       description: "Quality photography that builds trust with your clients.",
       link: "/projects/photography",
-      media: copy.photographCarouselImage,
+      media: copy.photographyCarouselImage,
       type: "image",
     },
     // {
